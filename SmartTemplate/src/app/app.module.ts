@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedLibsModule } from './shared';
 
 import {
   FooterComponent,
@@ -8,7 +10,6 @@ import {
  } from './layout';
 
  import { LayoutRoutingModule } from './layout/layout-routing.module';
-
  import { AdminModule } from './admin/admin.module';
  import { HomeModule } from './home/home.module';
 
@@ -21,7 +22,9 @@ import {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     LayoutRoutingModule,
+    SharedLibsModule,
     AdminModule,
     HomeModule
   ],

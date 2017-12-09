@@ -3,10 +3,12 @@ import { RouterModule } from '@angular/router';
 
 import { HOME_ROUTE } from './home.route';
 import { HomeComponent } from './home.component';
+import { SharedLibsModule } from '../shared';
 
 @NgModule({
     imports: [
-        RouterModule.forRoot([ HOME_ROUTE ], { useHash: true })
+        RouterModule.forRoot([ HOME_ROUTE ], { useHash: true }),
+        SharedLibsModule
     ],
     declarations: [
         HomeComponent
