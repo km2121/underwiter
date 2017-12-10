@@ -1,0 +1,61 @@
+{
+    "borrower": {
+        "general": {
+            "lastName": {
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "firstName": {
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "middleInitial": {
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "dateOfBirth": {
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "socialSecurityNum": {
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "motherMaidenName": {
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "citizenship": {
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "otherCountry": {
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "married": {
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "spouseLastName": {
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "spouseFirstName": {
+                "enable": true,
+                "show": true,
+                "required": false
+            }
+        }
+    }
+}
