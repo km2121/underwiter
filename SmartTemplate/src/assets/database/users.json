@@ -1,0 +1,1194 @@
+[
+    {   
+        "id": 1,
+        "type": 1, // borrower
+        "information": {
+            "general": {
+                "lastName": {
+                    "value": "Smith",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "firstName": {
+                    "value": "Sam",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "middleInitial": {
+                    "value": "",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "dateOfBirth": {
+                    "value": "1990/05/15",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "socialSecurityNum": {
+                    "value": "1234567890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "motherMaidenName": {
+                    "value": "",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "citizenship": {
+                    "value": 1,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "otherCountry": {
+                    "value": 1,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "married": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "spouseLastName": {
+                    "enable": true,
+                    "show": false,
+                    "required": false
+                },
+                "spouseFirstName": {
+                    "enable": true,
+                    "show": false,
+                    "required": false
+                }
+            },
+            "address": {
+                "streetAddress1": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"streetAddress2": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"residentialCity": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"residentialState": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"zipCode": {
+                    "value": "11102",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"yearsAtAddress": {
+                    "value": "3",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"monthsAtAddress": {
+                    "value": "7",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"isSameMailAddress": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailAddress1": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailAddress2": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailCity": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailState": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailZipCode": {
+                    "value": "11102",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "contact": {
+                "homePhone": {
+                    "value": "1-123-456-7890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "workPhone": {
+                    "value": "1-123-456-7890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "mobilePhone": {
+                    "value": "1-123-456-7890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "personalEmail": {
+                    "value": "personalEmail@mail.com",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "workEmail": {
+                    "value": "workEmail@mail.com",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "employment": {
+                "status": {
+                    "value": 1,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "employerName": {
+                    "value": "employer name",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "yearsAtEmployer": {
+                    "value": "3",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "occupatiom": {
+                    "value": "Saler",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "employerAddress1": {
+                    "value": "Employer address 1",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "employerAddress2": {
+                    "value": "Employer address 2",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "city": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "state": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "zipCode": {
+                    "value": "11102",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "financial": {
+                "annualIncome": {
+                    "value": "2000",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "netWorth": {
+                    "value": "1500",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "totalAssets": {
+                    "value": "50000",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "sourceOfIncome": {
+                    "value": "Company",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "sourceOfWealth": {
+                    "value": null,
+                    "enable": true,
+                    "show": false,
+                    "required": false
+                },
+                "accountType": {
+                    "value": 2,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "accountNumber": {
+                    "value": "0123456789",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "legal": {
+                "associate": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "defendant": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "judgement": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "details": {
+                    "value": "details",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            }
+        }
+    },
+    {   
+        "id": 2,
+        "type": 2, // co-borrower
+        "information": {
+            "general": {
+                "lastName": {
+                    "value": "Jones",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "firstName": {
+                    "value": "Lenny",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "middleInitial": {
+                    "value": "",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "dateOfBirth": {
+                    "value": "1990/05/15",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "socialSecurityNum": {
+                    "value": "1234567890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "motherMaidenName": {
+                    "value": "",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "citizenship": {
+                    "value": 1,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "otherCountry": {
+                    "value": 1,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "married": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "spouseLastName": {
+                    "enable": true,
+                    "show": false,
+                    "required": false
+                },
+                "spouseFirstName": {
+                    "enable": true,
+                    "show": false,
+                    "required": false
+                }
+            },
+            "address": {
+                "streetAddress1": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"streetAddress2": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"residentialCity": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"residentialState": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"zipCode": {
+                    "value": "11102",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"yearsAtAddress": {
+                    "value": "3",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"monthsAtAddress": {
+                    "value": "7",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"isSameMailAddress": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailAddress1": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailAddress2": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailCity": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailState": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailZipCode": {
+                    "value": "11102",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "contact": {
+                "homePhone": {
+                    "value": "1-123-456-7890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "workPhone": {
+                    "value": "1-123-456-7890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "mobilePhone": {
+                    "value": "1-123-456-7890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "personalEmail": {
+                    "value": "personalEmail@mail.com",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "workEmail": {
+                    "value": "workEmail@mail.com",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "employment": {
+                "status": {
+                    "value": 1,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "employerName": {
+                    "value": "employer name",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "yearsAtEmployer": {
+                    "value": "3",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "occupatiom": {
+                    "value": "Saler",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "employerAddress1": {
+                    "value": "Employer address 1",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "employerAddress2": {
+                    "value": "Employer address 2",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "city": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "state": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "zipCode": {
+                    "value": "11102",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "financial": {
+                "annualIncome": {
+                    "value": "2000",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "netWorth": {
+                    "value": "1500",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "totalAssets": {
+                    "value": "50000",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "sourceOfIncome": {
+                    "value": "Company",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "sourceOfWealth": {
+                    "value": null,
+                    "enable": true,
+                    "show": false,
+                    "required": false
+                },
+                "accountType": {
+                    "value": 2,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "accountNumber": {
+                    "value": "0123456789",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "legal": {
+                "associate": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "defendant": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "judgement": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "details": {
+                    "value": "details",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            }
+        }
+    },
+    {   
+        "id": 3,
+        "type": 3, // trustee
+        "information": {
+            "general": {
+                "lastName": {
+                    "value": "Jane",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "firstName": {
+                    "value": "Mary",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "middleInitial": {
+                    "value": "",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "dateOfBirth": {
+                    "value": "1990/05/15",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "socialSecurityNum": {
+                    "value": "1234567890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "motherMaidenName": {
+                    "value": "",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "citizenship": {
+                    "value": 1,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "otherCountry": {
+                    "value": 1,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "married": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "spouseLastName": {
+                    "enable": true,
+                    "show": false,
+                    "required": false
+                },
+                "spouseFirstName": {
+                    "enable": true,
+                    "show": false,
+                    "required": false
+                }
+            },
+            "address": {
+                "streetAddress1": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"streetAddress2": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"residentialCity": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"residentialState": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"zipCode": {
+                    "value": "11102",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"yearsAtAddress": {
+                    "value": "3",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"monthsAtAddress": {
+                    "value": "7",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"isSameMailAddress": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailAddress1": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailAddress2": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailCity": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailState": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailZipCode": {
+                    "value": "11102",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "contact": {
+                "homePhone": {
+                    "value": "1-123-456-7890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "workPhone": {
+                    "value": "1-123-456-7890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "mobilePhone": {
+                    "value": "1-123-456-7890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "personalEmail": {
+                    "value": "personalEmail@mail.com",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "workEmail": {
+                    "value": "workEmail@mail.com",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "employment": {
+                "status": {
+                    "value": 1,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "employerName": {
+                    "value": "employer name",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "yearsAtEmployer": {
+                    "value": "3",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "occupatiom": {
+                    "value": "Saler",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "employerAddress1": {
+                    "value": "Employer address 1",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "employerAddress2": {
+                    "value": "Employer address 2",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "city": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "state": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "zipCode": {
+                    "value": "11102",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "financial": {
+                "annualIncome": {
+                    "value": "2000",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "netWorth": {
+                    "value": "1500",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "totalAssets": {
+                    "value": "50000",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "sourceOfIncome": {
+                    "value": "Company",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "sourceOfWealth": {
+                    "value": null,
+                    "enable": true,
+                    "show": false,
+                    "required": false
+                },
+                "accountType": {
+                    "value": 2,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "accountNumber": {
+                    "value": "0123456789",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "legal": {
+                "associate": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "defendant": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "judgement": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "details": {
+                    "value": "details",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            }
+        }
+    },
+    {   
+        "id": 4,
+        "type": 4, // pledger
+        "information": {
+            "general": {
+                "lastName": {
+                    "value": "O'Neil",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "firstName": {
+                    "value": "Henry",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "middleInitial": {
+                    "value": "",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "dateOfBirth": {
+                    "value": "1990/05/15",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "socialSecurityNum": {
+                    "value": "1234567890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "motherMaidenName": {
+                    "value": "",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "citizenship": {
+                    "value": 1,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "otherCountry": {
+                    "value": 1,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "married": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "spouseLastName": {
+                    "enable": true,
+                    "show": false,
+                    "required": false
+                },
+                "spouseFirstName": {
+                    "enable": true,
+                    "show": false,
+                    "required": false
+                }
+            },
+            "address": {
+                "streetAddress1": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"streetAddress2": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"residentialCity": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"residentialState": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"zipCode": {
+                    "value": "11102",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"yearsAtAddress": {
+                    "value": "3",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"monthsAtAddress": {
+                    "value": "7",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"isSameMailAddress": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailAddress1": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailAddress2": {
+                    "value": "Unknow",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailCity": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailState": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },"mailZipCode": {
+                    "value": "11102",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "contact": {
+                "homePhone": {
+                    "value": "1-123-456-7890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "workPhone": {
+                    "value": "1-123-456-7890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "mobilePhone": {
+                    "value": "1-123-456-7890",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "personalEmail": {
+                    "value": "personalEmail@mail.com",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "workEmail": {
+                    "value": "workEmail@mail.com",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "employment": {
+                "status": {
+                    "value": 1,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "employerName": {
+                    "value": "employer name",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "yearsAtEmployer": {
+                    "value": "3",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "occupatiom": {
+                    "value": "Saler",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "employerAddress1": {
+                    "value": "Employer address 1",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "employerAddress2": {
+                    "value": "Employer address 2",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "city": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "state": {
+                    "value": "New York",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "zipCode": {
+                    "value": "11102",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "financial": {
+                "annualIncome": {
+                    "value": "2000",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "netWorth": {
+                    "value": "1500",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "totalAssets": {
+                    "value": "50000",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "sourceOfIncome": {
+                    "value": "Company",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "sourceOfWealth": {
+                    "value": null,
+                    "enable": true,
+                    "show": false,
+                    "required": false
+                },
+                "accountType": {
+                    "value": 2,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "accountNumber": {
+                    "value": "0123456789",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            },
+            "legal": {
+                "associate": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "defendant": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "judgement": {
+                    "value": 0,
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                },
+                "details": {
+                    "value": "details",
+                    "enable": true,
+                    "show": true,
+                    "required": false
+                }
+            }
+        }
+    }
+]
