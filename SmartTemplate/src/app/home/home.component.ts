@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  ScrollSpyService } from 'ngx-scrollspy';
 
 @Component({
   selector: 'app-home',

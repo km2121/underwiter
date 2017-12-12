@@ -1,3 +1,19 @@
-<div fxLayout="row" fxLayoutAlign="center center">
-  
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxFlex="70">
+    <mat-sidenav-container class="nav-container" fxLayout="row">
+        <mat-sidenav class="left-content" fxFlex="45" mode="side" opened="true">
+            <mat-nav-list scrollSpy class="nav-list">
+                <a class="nav-item" mat-list-item routerLink=".">GENERAL</a>
+                <a class="nav-item" mat-list-item routerLink=".">ADDRESS</a>
+                <a class="nav-item" mat-list-item routerLink=".">CONTACT</a>
+                <a class="nav-item" mat-list-item routerLink=".">EMPLOYMENT</a>
+                <a class="nav-item" mat-list-item routerLink=".">FINANCIAL</a>
+                <a class="nav-item" mat-list-item routerLink=".">LEGAL</a>
+                <a mat-list-item routerLink=".">HOME</a>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content class="main-content" fxFlex="45">Main content</mat-sidenav-content>
+      </mat-sidenav-container>
+  </div>
+  <div fxFlex="28"></div>
 </div>

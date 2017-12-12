@@ -1,0 +1,26 @@
+.nav-container {
+    min-height: 500px;
+}
+
+.left-content {
+    min-width: 45%;
+}
+
+.main-content {
+    margin-left: 50% !important;
+    min-width: 50%;
+    min-height: 1500px;
+}
+
+.nav-list {
+    padding-top: 0px;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+
+    .nav-item {
+        border-bottom: 1px solid lightgray;
+    }
+}
