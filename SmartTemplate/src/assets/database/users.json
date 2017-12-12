@@ -6,7 +6,7 @@
 			{
 				"category": "General",
 				"fieldName": "Last name",
-				"fieldfieldValue": "Smith",
+				"fieldValue": "Smith",
 				"enable": true,
 				"show": true,
 				"required": false
@@ -14,7 +14,7 @@
 			{
 				"category": "General",
 				"fieldName": "First name",
-				"fieldfieldValue": "Sam",
+				"fieldValue": "Sam",
 				"enable": true,
 				"show": true,
 				"required": false
@@ -22,7 +22,7 @@
 			{
 				"category": "General",
 				"fieldName": "Middle initial",
-				"fieldfieldValue": "",
+				"fieldValue": "",
 				"enable": true,
 				"show": true,
 				"required": false
