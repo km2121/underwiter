@@ -1,19 +1,137 @@
 <div fxLayout="row" fxLayoutAlign="space-between center">
-  <div fxFlex="70">
-    <mat-sidenav-container class="nav-container" fxLayout="row">
-        <mat-sidenav class="left-content" fxFlex="45" mode="side" opened="true">
-            <mat-nav-list scrollSpy class="nav-list">
-                <a class="nav-item" mat-list-item routerLink=".">GENERAL</a>
-                <a class="nav-item" mat-list-item routerLink=".">ADDRESS</a>
-                <a class="nav-item" mat-list-item routerLink=".">CONTACT</a>
-                <a class="nav-item" mat-list-item routerLink=".">EMPLOYMENT</a>
-                <a class="nav-item" mat-list-item routerLink=".">FINANCIAL</a>
-                <a class="nav-item" mat-list-item routerLink=".">LEGAL</a>
-                <a mat-list-item routerLink=".">HOME</a>
-            </mat-nav-list>
-        </mat-sidenav>
-        <mat-sidenav-content class="main-content" fxFlex="45">Main content</mat-sidenav-content>
-      </mat-sidenav-container>
-  </div>
-  <div fxFlex="28"></div>
+    <div fxFlex="70">
+        <mat-sidenav-container class="nav-container" fxLayout="row">
+            <mat-sidenav class="left-content" fxFlex="45" mode="side" opened="true">
+                <mat-nav-list scrollSpy class="nav-list">
+                    <a class="nav-item" mat-list-item routerLink=".">GENERAL</a>
+                    <a class="nav-item" mat-list-item routerLink=".">ADDRESS</a>
+                    <a class="nav-item" mat-list-item routerLink=".">CONTACT</a>
+                    <a class="nav-item" mat-list-item routerLink=".">EMPLOYMENT</a>
+                    <a class="nav-item" mat-list-item routerLink=".">FINANCIAL</a>
+                    <a class="nav-item" mat-list-item routerLink=".">LEGAL</a>
+                    <a mat-list-item routerLink=".">HOME</a>
+                </mat-nav-list>
+            </mat-sidenav>
+            <mat-sidenav-content class="main-content" fxFlex="45">
+                <div fxLayout="column">
+                    <mat-form-field>
+                        <mat-select placeholder="Select Role">
+                            <mat-option *ngFor="let role of roles" [value]="role.key">
+                                {{ role.value }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div class="info-container" fxLayout="column">
+                        <span class="info-title">GENERAL INFORMATION</span>
+                        <div class="info-content" fxLayout="column">
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Last name">
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="First name">
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Middle Initial">
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <input matInput [disabled]="false" required="true" [matDatepicker]="dobPicker" placeholder="DOB">
+                                <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                                <mat-datepicker #dobPicker></mat-datepicker>
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Social Security Number">
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Mothers Maiden Name">
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <mat-select [disabled]="false" required="true" placeholder="Citizenship Status">
+                                    <mat-option *ngFor="let status of citizenshipStatus" [value]="status.key">
+                                        {{ status.value }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <mat-select [disabled]="false" required="true" placeholder="If Dual Citizen - List other Country">
+                                    <mat-option *ngFor="let country of otherCountries" [value]="country.key">
+                                        {{ country.value }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-radio-group *ngIf="true" [disabled]="false" required="true" fxLayout="column">
+                                <span class="placeholder-text">Currently Married?</span>
+                                <mat-radio-button value="1">Yes</mat-radio-button>
+                                <mat-radio-button value="0">No</mat-radio-button>
+                            </mat-radio-group>
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Spouse's Last name">
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Spouse's First name">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="end-container"></div>
+                    <div class="info-container" fxLayout="column">
+                        <span class="info-title">ADDRESS INFORMATION</span>
+                        <div class="info-content" fxLayout="column">
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Residential Street Address 1">
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Residential Street Address 2">
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Residential City">
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <mat-select [disabled]="false" required="true" placeholder="Residential State">
+                                    <mat-option *ngFor="let state of states" [value]="status.key">
+                                        {{ status.value }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <input matInput [disabled]="false" required="true" [matDatepicker]="dobPicker" placeholder="DOB">
+                                <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                                <mat-datepicker #dobPicker></mat-datepicker>
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Social Security Number">
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Mothers Maiden Name">
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <mat-select [disabled]="false" required="true" placeholder="Citizenship Status">
+                                    <mat-option *ngFor="let status of citizenshipStatus" [value]="status.key">
+                                        {{ status.value }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <mat-select [disabled]="false" required="true" placeholder="If Dual Citizen - List other Country">
+                                    <mat-option *ngFor="let country of otherCountries" [value]="country.key">
+                                        {{ country.value }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-radio-group *ngIf="true" [disabled]="false" required="true" fxLayout="column">
+                                <span class="placeholder-text">Currently Married?</span>
+                                <mat-radio-button value="1">Yes</mat-radio-button>
+                                <mat-radio-button value="0">No</mat-radio-button>
+                            </mat-radio-group>
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Spouse's Last name">
+                            </mat-form-field>
+                            <mat-form-field *ngIf="true">
+                                <input [disabled]="false" required="true" matInput placeholder="Spouse's First name">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+    <div fxFlex="28"></div>
 </div>

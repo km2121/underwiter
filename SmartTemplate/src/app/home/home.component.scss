@@ -1,5 +1,5 @@
 .nav-container {
-    min-height: 500px;
+    background-color: unset !important;
 }
 
 .left-content {
@@ -9,18 +9,45 @@
 .main-content {
     margin-left: 50% !important;
     min-width: 50%;
-    min-height: 1500px;
 }
 
 .nav-list {
+    margin-top: 65px;
     padding-top: 0px;
     position: absolute;
     right: 0;
     min-width: 200px;
-    border: 1px solid lightgray;
+    border: 1px solid rgba(0,0,0,.125);;
     border-radius: 5px;
 
     .nav-item {
-        border-bottom: 1px solid lightgray;
+        border-bottom: 1px solid rgba(0,0,0,.125);;
     }
 }
+
+.info-container {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.info-content {
+    padding: 20px 30px;
+
+    mat-radio-button {
+        margin-bottom: 10px;
+    }
+}
+
+.info-title {
+    padding: 10px;
+    background-color: #e1e1ea;
+    font-weight: bold;
+}
+
+.end-container {
+    margin: 20px 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
