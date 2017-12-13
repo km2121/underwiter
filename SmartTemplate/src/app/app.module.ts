@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedLibsModule } from './shared';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import {
   FooterComponent,
@@ -10,25 +11,26 @@ import {
   MainComponent
 } from './layout';
 
-import { LayoutRoutingModule } from './layout/layout-routing.module';
-import { AdminModule } from './admin/admin.module';
-import { HomeModule } from './home/home.module';
+import { AdminComponent } from './admin/admin.component';
+import { HomeComponent } from './home/home.component';
+
+import { APP_ROUTE } from './app-routing.module';
 
 
 @NgModule({
-  declarations: [
-    FooterComponent,
-    NavbarComponent,
-    MainComponent
-  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(APP_ROUTE, {useHash: true}),
     HttpModule,
-    LayoutRoutingModule,
-    SharedLibsModule,
-    AdminModule,
-    HomeModule
+    SharedLibsModule
+  ],
+  declarations: [
+    FooterComponent,
+    NavbarComponent,
+    MainComponent,
+    HomeComponent,
+    AdminComponent
   ],
   providers: [],
   bootstrap: [MainComponent]
