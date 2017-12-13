@@ -13,6 +13,7 @@ import {
 
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
+import { HomeService } from './home/home.service';
 
 import { APP_ROUTE } from './app-routing.module';
 
@@ -21,7 +22,7 @@ import { APP_ROUTE } from './app-routing.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(APP_ROUTE, {useHash: true}),
+    RouterModule.forRoot(APP_ROUTE, { useHash: true }),
     HttpModule,
     SharedLibsModule
   ],
@@ -32,7 +33,9 @@ import { APP_ROUTE } from './app-routing.module';
     HomeComponent,
     AdminComponent
   ],
-  providers: [],
+  providers: [
+    HomeService
+  ],
   bootstrap: [MainComponent]
 })
 export class AppModule { }

@@ -52,5 +52,75 @@
             "key": 5,
             "value": "Fiji"
         }
+    ],
+    "STATES": [
+        {
+            "key": 1,
+            "value": "Alabama"
+        },
+        {
+            "key": 2,
+            "value": "Alaska"
+        },
+        {
+            "key": 3,
+            "value": "Arizona"
+        },
+        {
+            "key": 4,
+            "value": "Arkansas"
+        },
+        {
+            "key": 5,
+            "value": "California"
+        }
+    ],
+    "EMP_STATUS": [
+        {
+            "key": 0,
+            "value": "Select"
+        },
+        {
+            "key": 1,
+            "value": "Full-time Employed"
+        },
+        {
+            "key": 2,
+            "value": "Part-time Employed"
+        },
+        {
+            "key": 3,
+            "value": "Self-Employed"
+        },
+        {
+            "key": 4,
+            "value": "Homemaker"
+        },
+        {
+            "key": 5,
+            "value": "Military"
+        },
+        {
+            "key": 6,
+            "value": "Retired"
+        },
+        {
+            "key": 7,
+            "value": "Student"
+        },
+        {
+            "key": 8,
+            "value": "Unemployed"
+        }
+    ],
+    "ACCOUNT_TYPES": [
+        {
+            "key": 1,
+            "value": "Checking"
+        },
+        {
+            "key": 2,
+            "value": "Saving"
+        }
     ]
 }
