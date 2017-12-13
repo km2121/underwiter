@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedLibsModule } from './shared';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {
   FooterComponent,
@@ -23,6 +24,7 @@ import { APP_ROUTE } from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(APP_ROUTE, { useHash: true }),
+    NgbModule.forRoot(),
     HttpModule,
     SharedLibsModule
   ],
