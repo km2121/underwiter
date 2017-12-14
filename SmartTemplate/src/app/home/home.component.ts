@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer } from '@angular/core';
 import { HomeService } from './home.service';
 
 @Component({
@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit {
   accountTypes: object[];
 
   constructor(
-    private homeService: HomeService
+    private homeService: HomeService,
+    private renderer: Renderer
   ) { }
 
   ngOnInit() {
@@ -31,6 +32,15 @@ export class HomeComponent implements OnInit {
 
   loadComponentData() {
     return this.homeService.getComponentData();
+  }
+
+  goToSection(section: string, event: any) {
+    document.querySelector('#' + section).scrollIntoView();
+    const menuItems = document.getElementById('nav-list').children;
+    for (let i = 0; i < menuItems.length; i++) {
+      menuItems.item(i).classList.remove('active-menu');
+    }
+    this.renderer.setElementClass(event.target.parentElement, 'active-menu', true);
   }
 
 }

@@ -2,13 +2,13 @@
     <div fxFlex="70">
         <mat-sidenav-container class="nav-container" fxLayout="row" fxLayoutAlign="space-between center">
             <mat-sidenav [appScrollSpy]="100" class="left-content" mode="side" opened="true">
-                    <mat-nav-list class="nav-list">
-                        <a class="nav-item" mat-list-item routerLink=".">GENERAL</a>
-                        <a class="nav-item" mat-list-item routerLink=".">ADDRESS</a>
-                        <a class="nav-item" mat-list-item routerLink=".">CONTACT</a>
-                        <a class="nav-item" mat-list-item routerLink=".">EMPLOYMENT</a>
-                        <a class="nav-item" mat-list-item routerLink=".">FINANCIAL</a>
-                        <a class="nav-item" mat-list-item routerLink=".">LEGAL</a>
+                    <mat-nav-list id="nav-list" class="nav-list">
+                        <a class="nav-item" mat-list-item (click)="goToSection('section1', $event)">GENERAL</a>
+                        <a class="nav-item" mat-list-item (click)="goToSection('section2', $event)">ADDRESS</a>
+                        <a class="nav-item" mat-list-item (click)="goToSection('section3', $event)">CONTACT</a>
+                        <a class="nav-item" mat-list-item (click)="goToSection('section4', $event)">EMPLOYMENT</a>
+                        <a class="nav-item" mat-list-item (click)="goToSection('section5', $event)">FINANCIAL</a>
+                        <a class="nav-item" mat-list-item (click)="goToSection('section6', $event)">LEGAL</a>
                         <a mat-list-item href=".">HOME</a>
                     </mat-nav-list>
             </mat-sidenav>
@@ -21,7 +21,7 @@
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-                    <div class="info-container" fxLayout="column">
+                    <div class="info-container" id="section1" fxLayout="column">
                         <span class="info-title">GENERAL INFORMATION</span>
                         <div class="info-content" fxLayout="column">
                             <mat-form-field *ngIf="true">
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="end-container"></div>
-                    <div class="info-container" fxLayout="column">
+                    <div class="info-container" id="section2" fxLayout="column">
                         <span class="info-title">ADDRESS INFORMATION</span>
                         <div class="info-content" fxLayout="column">
                             <mat-form-field *ngIf="true">
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                     <div class="end-container"></div>
-                    <div class="info-container" fxLayout="column">
+                    <div class="info-container" id="section3" fxLayout="column">
                         <span class="info-title">CONTACT INFORMATION</span>
                         <div class="info-content" fxLayout="column">
                             <mat-form-field *ngIf="true">
@@ -148,7 +148,7 @@
                         </div>
                     </div>
                     <div class="end-container"></div>
-                    <div class="info-container" fxLayout="column">
+                    <div class="info-container" id="section4" fxLayout="column">
                         <span class="info-title">EMPLOYMENT INFORMATION</span>
                         <div class="info-content" fxLayout="column">
                             <mat-form-field *ngIf="true">
@@ -189,7 +189,7 @@
                         </div>
                     </div>
                     <div class="end-container"></div>
-                    <div class="info-container" fxLayout="column">
+                    <div class="info-container" id="section5" fxLayout="column">
                         <span class="info-title">FINANCIAL INFORMATION</span>
                         <div class="info-content" fxLayout="column">
                             <mat-form-field *ngIf="true">
@@ -220,7 +220,7 @@
                         </div>
                     </div>
                     <div class="end-container"></div>
-                    <div class="info-container" fxLayout="column">
+                    <div class="info-container" id="section6" fxLayout="column">
                         <span class="info-title">LEGAL INFORMATION</span>
                         <div class="info-content" fxLayout="column">
                             <mat-radio-group *ngIf="true" [disabled]="false" required="true" fxLayout="column">

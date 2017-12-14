@@ -15,7 +15,6 @@ export class ScrollSpyDirective {
 
     @HostListener('window:scroll')
     onWindowScroll() {
-        console.log(this.document.documentElement.scrollTop);
         if (this.document.documentElement.scrollTop > this.appScrollSpy) {
             this.renderer.setElementClass(this.el.nativeElement, 'left-content-spy', true);
         } else {
