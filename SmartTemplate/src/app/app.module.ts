@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedLibsModule } from './shared';
@@ -15,6 +15,8 @@ import {
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { HomeService } from './home/home.service';
+
+import { ScrollSpyDirective } from './layout/directives';
 
 import { APP_ROUTE } from './app-routing.module';
 
@@ -33,11 +35,13 @@ import { APP_ROUTE } from './app-routing.module';
     NavbarComponent,
     MainComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    ScrollSpyDirective
   ],
   providers: [
     HomeService
   ],
-  bootstrap: [MainComponent]
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  bootstrap: [ MainComponent ]
 })
 export class AppModule { }

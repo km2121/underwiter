@@ -1,20 +1,21 @@
 .nav-container {
     background-color: unset !important;
+    position: relative;
 }
 
 .left-content {
-    min-width: 45%;
+    left: 28%;
 }
 
 .main-content {
     margin-left: 50% !important;
-    min-width: 50%;
+    // min-width: 50%;
 }
 
 .nav-list {
-    margin-top: 65px;
+    margin-top: 30px;
     padding-top: 0px;
-    position: absolute;
+    // position: absolute;
     right: 0;
     min-width: 200px;
     border: 1px solid rgba(0,0,0,.125);;

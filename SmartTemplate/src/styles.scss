@@ -16,3 +16,8 @@
     font-size: 13px;
     margin-bottom: 10px;
 }
+
+.left-content-spy {
+    position: fixed !important;
+    left: calc(19.5% + 1px) !important;
+}
