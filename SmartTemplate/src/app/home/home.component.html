@@ -9,7 +9,7 @@
                         <a class="nav-item" mat-list-item (click)="goToSection('section4', $event)">EMPLOYMENT</a>
                         <a class="nav-item" mat-list-item (click)="goToSection('section5', $event)">FINANCIAL</a>
                         <a class="nav-item" mat-list-item (click)="goToSection('section6', $event)">LEGAL</a>
-                        <a mat-list-item href=".">HOME</a>
+                        <a mat-list-item (click)="backToTop()">HOME</a>
                     </mat-nav-list>
             </mat-sidenav>
             <mat-sidenav-content class="main-content">
@@ -243,7 +243,7 @@
                             </mat-form-field>
                         </div>
                     </div>
-                    <div class="info-container" fxLayout="column">
+                    <div class="info-container mt-5" fxLayout="column">
                         <div class="info-content" fxLayout="row" fxLayoutAlign="center center">
                             <button class="mr-2" mat-raised-button color="primary">Save</button>
                             <button class="ml-2" mat-raised-button>Reset</button>
