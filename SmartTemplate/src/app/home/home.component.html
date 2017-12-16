@@ -1,7 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="space-between start">
     <div fxFlex="70">
         <mat-sidenav-container class="nav-container" fxLayout="row" fxLayoutAlign="space-between center">
-            <mat-sidenav [appScrollSpy]="100" class="left-content" mode="side" opened="true">
+            <mat-sidenav [appScrollSpy]="100" [className]="'left-content-spy'" class="left-content" mode="side" opened="true">
                 <mat-nav-list id="nav-list" class="nav-list">
                     <a class="nav-item" mat-list-item (click)="goToSection('section1', $event)">GENERAL</a>
                     <a class="nav-item" mat-list-item (click)="goToSection('section2', $event)">ADDRESS</a>
@@ -253,7 +253,7 @@
             </mat-sidenav-content>
         </mat-sidenav-container>
     </div>
-    <div fxFlex="28" fxLayout="column" fxLayoutAlign="space-around center">
+    <div fxFlex="28" fxLayout="column" fxLayoutAlign="start start" [appScrollSpy]="60" [className]="'right-content-spy'">
         <div class="user-content mb-3" *ngFor="let user of users">
             <div class="progress mb-2">
                 <div class="progress-bar progress-bar-success" role="progressbar" [ngStyle]="{'width': calcCompletePercent(user.userId)}">

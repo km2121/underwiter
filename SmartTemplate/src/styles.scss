@@ -22,6 +22,12 @@
     left: calc(19.5% + 1px) !important;
 }
 
+.right-content-spy {
+    position: fixed !important;
+    left: 72% !important;
+    top: 20px !important;
+}
+
 .active-menu {
     background-color: #dcdcdc !important;
 }

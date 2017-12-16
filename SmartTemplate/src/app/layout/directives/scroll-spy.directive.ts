@@ -7,18 +7,20 @@ import { DOCUMENT } from '@angular/platform-browser';
 
 export class ScrollSpyDirective {
     @Input() appScrollSpy: number;
+    @Input('className') className: string;
     constructor(
         private el: ElementRef,
         @Inject(DOCUMENT) private document: Document,
         private renderer: Renderer
-    ) { }
+    ) {
+    }
 
     @HostListener('window:scroll')
     onWindowScroll() {
         if (this.document.documentElement.scrollTop > this.appScrollSpy) {
-            this.renderer.setElementClass(this.el.nativeElement, 'left-content-spy', true);
+            this.renderer.setElementClass(this.el.nativeElement, this.className, true);
         } else {
-            this.renderer.setElementClass(this.el.nativeElement, 'left-content-spy', false);
+            this.renderer.setElementClass(this.el.nativeElement, this.className, false);
         }
     }
 }
