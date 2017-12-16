@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer, HostListener, AfterViewInit } from '@angular/core';
 import { HomeService } from './home.service';
+import { User, UserData } from '../shared';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { HomeService } from './home.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  roles: object[];
+  roles: any;
   citizenshipStatus: object[];
   otherCountries: object[];
   states: object[];
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   accountTypes: object[];
   isScrollByClick: boolean;
   menuItems: HTMLCollection;
+  users: User[];
 
   constructor(
     private homeService: HomeService,
@@ -22,7 +24,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
-    this.loadComponentData().then((response) => {
+    this.loadComponentData();
+    this.loadUserData();
+  }
+
+  ngAfterViewInit() {
+    this.menuItems = document.getElementById('nav-list').children;
+    this.activeElement(this.menuItems[0]);
+  }
+
+  loadComponentData() {
+    return this.homeService.getComponentData().then((response) => {
       this.roles = response.ROLES;
       this.citizenshipStatus = response.CITIZENSHIP;
       this.otherCountries = response.OTHER_COUNTRIES;
@@ -32,13 +44,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    this.menuItems = document.getElementById('nav-list').children;
-    this.activeElement(this.menuItems[0]);
-  }
-
-  loadComponentData() {
-    return this.homeService.getComponentData();
+  loadUserData() {
+    return this.homeService.getUserData().then((data) => {
+      this.users = data;
+    });
   }
 
   goToSection(section: string, event: any) {
@@ -74,6 +83,66 @@ export class HomeComponent implements OnInit, AfterViewInit {
   backToTop() {
     window.scrollTo(0, 0);
     this.activeElement(this.menuItems[0]);
+  }
+
+  getUserRole(key: number): string {
+    let result: string;
+    for (let i = 0; i < this.roles.length; i++) {
+      if (this.roles[i].key === key) {
+        result = this.roles[i].value;
+      }
+    }
+    return result;
+  }
+
+  getUserName(userId: number): string {
+    let result: string;
+    const user = this.getUserByUserId(userId);
+    if (user) {
+      result = user.data[1].fieldValue + ' ' + user.data[0].fieldValue;
+    }
+    return result;
+  }
+
+  calcCompletePercent(userId: number) {
+    const user = this.getUserByUserId(userId);
+    if (user) {
+      const totalField = user.data.length;
+      // total required fields of user
+      const requiredFields = this.calcTotalRequireField(user);
+      const unrequiredFields = totalField - requiredFields;
+      // calculate completed require fields
+      let completeRequireFields = 0;
+      for (let i = 0; i < user.data.length; i++) {
+        if (user.data[i].required === true && user.data[i].fieldValue.length > 0) {
+          completeRequireFields++;
+        }
+      }
+      // calculate unrequired field percent in form
+      const unrequiredFieldPercent = Math.floor((unrequiredFields / totalField) * 100);
+      // calculate required filed complete percent in form
+      const requiredFieldCompletePercent = Math.floor((completeRequireFields / totalField) * 100);
+      return unrequiredFieldPercent + requiredFieldCompletePercent + '%';
+    }
+  }
+
+  calcTotalRequireField(user: User): number {
+    let result = 0;
+    for (let i = 0; i < user.data.length; i++) {
+      if (user.data[i].required === true) {
+        result ++;
+      }
+    }
+    return result;
+  }
+
+  getUserByUserId(userId: number) {
+    for (let i = 0; i < this.users.length; i++) {
+      if (userId === this.users[i].userId) {
+        return this.users[i];
+      }
+    }
+    return null;
   }
 
 }
