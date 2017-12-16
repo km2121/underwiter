@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="space-between start">
+<div fxLayout="row" fxLayoutAlign="space-between start" *ngIf="users">
     <div fxFlex="70">
         <mat-sidenav-container class="nav-container" fxLayout="row" fxLayoutAlign="space-between center">
             <mat-sidenav [appScrollSpy]="80" [className]="'left-content-spy'" class="left-content" mode="side" opened="true">
