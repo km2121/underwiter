@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer, HostListener, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Renderer, HostListener, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { HomeService } from './home.service';
 import { User, UserData } from '../shared';
 
@@ -7,7 +7,7 @@ import { User, UserData } from '../shared';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewChecked {
   roles: any;
   citizenshipStatus: object[];
   otherCountries: object[];
@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   isScrollByClick: boolean;
   menuItems: HTMLCollection;
   users: User[];
+  firstInit: boolean;
 
   constructor(
     private homeService: HomeService,
@@ -24,15 +25,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
+    this.firstInit = true; // flag to check first time init of component, after this, do not run the code in ngAfterViewChecked
     this.loadComponentData();
     this.loadUserData();
   }
 
-  ngAfterViewInit() {
-    this.menuItems = document.getElementById('nav-list').children;
-    this.activeElement(this.menuItems[0]);
+  ngAfterViewChecked() {
+    // check element has been init or not. Because use *ngIf in html, must to check at ngAfterViewChecked
+    if (document.getElementById('nav-list') && this.firstInit === true) {
+      this.menuItems = document.getElementById('nav-list').children;
+      this.activeElement(this.menuItems[0]);
+      this.firstInit = false;
+    }
   }
 
+  /**
+   * This function load component data such as dropdown, group radion button
+   */
   loadComponentData() {
     return this.homeService.getComponentData().then((response) => {
       this.roles = response.ROLES;
@@ -44,18 +53,29 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
+  /**
+   * This function load user data for list user in the right
+   */
   loadUserData() {
     return this.homeService.getUserData().then((data) => {
       this.users = data;
     });
   }
 
+  /**
+   * This function handle event click to menu if the left
+   * @param section id of section want to go to
+   * @param event target event (click)
+   */
   goToSection(section: string, event: any) {
     document.querySelector('#' + section).scrollIntoView();
     this.activeElement(event.target.parentElement);
     this.isScrollByClick = true;
   }
 
+  /**
+   *  This function handle scroll to setion will highlight menu in the left
+   */
   @HostListener('window:scroll')
   onWindowScroll() {
     if (this.isScrollByClick === true) {
@@ -73,6 +93,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
+  /**
+   * This function unactive actived menu and active selected menu in the left
+   * @param element element need to active
+   */
   activeElement(element) {
     for (let i = 0; i < this.menuItems.length; i++) {
       this.menuItems.item(i).classList.remove('active-menu');
@@ -85,6 +109,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.activeElement(this.menuItems[0]);
   }
 
+  /**
+   * This function return user role string
+   * @param key key of role (1: Borrower, 2: CoBorrower, 3: Trustee, 4: Pledger)
+   */
   getUserRole(key: number): string {
     let result: string;
     for (let i = 0; i < this.roles.length; i++) {
@@ -95,6 +123,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     return result;
   }
 
+  /**
+   * This function return user name = first name + last name
+   * @param userId
+   */
   getUserName(userId: number): string {
     let result: string;
     const user = this.getUserByUserId(userId);
@@ -104,6 +136,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     return result;
   }
 
+  /**
+   * This function return the percent complete the form base on required field has been enter information
+   * @param userId
+   */
   calcCompletePercent(userId: number) {
     const user = this.getUserByUserId(userId);
     if (user) {
@@ -126,6 +162,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
+  /**
+   * This function calculate complete percent of required fields
+   * @param user user want to calculate complete percent
+   */
   calcTotalRequireField(user: User): number {
     let result = 0;
     for (let i = 0; i < user.data.length; i++) {
@@ -136,6 +176,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     return result;
   }
 
+  /**
+   * This function return an User has userId in param
+   * @param userId userId of User want to get
+   */
   getUserByUserId(userId: number) {
     for (let i = 0; i < this.users.length; i++) {
       if (userId === this.users[i].userId) {
