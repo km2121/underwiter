@@ -1,0 +1,30 @@
+{
+    "role": 1, // Borrower
+    "control": {
+        "firstName": {
+            "controlType":"textBox",
+            "maxLength":"50",
+            "enable": true,
+            "show": true,
+            "required": false
+        },
+        "lastName": {
+            "controlType":"textBox",
+            "maxLength":"50",
+            "enable": true,
+            "show": true,
+            "required": false
+        },
+        "middleName": {
+            "controlType":"textBox",
+            "maxLength":"50",
+            "enable": true,
+            "show": true,
+            "required": false
+        },
+        .
+        .
+        .
+        .
+    }
+}
