@@ -39,11 +39,10 @@ import { CdkTableModule } from '@angular/cdk/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  imports: [
-    FormsModule,
-    ReactiveFormsModule
-  ],
+  imports: [],
   exports: [
+    FormsModule,
+    ReactiveFormsModule,
     CdkTableModule,
     MatAutocompleteModule,
     MatButtonModule,

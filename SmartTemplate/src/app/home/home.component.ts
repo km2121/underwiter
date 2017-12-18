@@ -1,6 +1,6 @@
 import { Component, OnInit, Renderer, HostListener, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { HomeService } from './home.service';
-import { User, UserData } from '../shared';
+import { User } from '../shared';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,10 @@ import { User, UserData } from '../shared';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewChecked {
+  propertiesData: any;
+  properties: any;
   roles: any;
+  selectedRole: any;
   citizenshipStatus: object[];
   otherCountries: object[];
   states: object[];
@@ -18,6 +21,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   menuItems: HTMLCollection;
   users: User[];
   firstInit: boolean;
+  selectedUser: User;
 
   constructor(
     private homeService: HomeService,
@@ -26,6 +30,8 @@ export class HomeComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.firstInit = true; // flag to check first time init of component, after this, do not run the code in ngAfterViewChecked
+    this.users = [];
+    this.loadComponentProperties();
     this.loadComponentData();
     this.loadUserData();
   }
@@ -45,6 +51,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   loadComponentData() {
     return this.homeService.getComponentData().then((response) => {
       this.roles = response.ROLES;
+      this.selectedRole = this.roles[0];
       this.citizenshipStatus = response.CITIZENSHIP;
       this.otherCountries = response.OTHER_COUNTRIES;
       this.states = response.STATES;
@@ -54,12 +61,34 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   }
 
   /**
+   * This function load component properties for each component in view
+   */
+  loadComponentProperties() {
+    return this.homeService.getComponentProperties().then((response) => {
+      this.propertiesData = response;
+      this.properties = this.propertiesData[0];
+    });
+  }
+
+  /**
    * This function load user data for list user in the right
+   * Set selected user is fist user in list
    */
   loadUserData() {
     return this.homeService.getUserData().then((data) => {
-      this.users = data;
+      if (data && data.length > 0) {
+        this.users = data;
+        this.changeUser(this.users[0].userId);
+      }
     });
+  }
+
+  /**
+   * This function change old selected user to new selected user
+   */
+  changeUser(userId: number) {
+    this.selectedUser = this.getUserByUserId(userId);
+    this.mapperDataToView(this.selectedUser);
   }
 
   /**
@@ -84,7 +113,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     }
     const infoItems = ['section1', 'section2', 'section3', 'section4', 'section5', 'section6'];
     for (let i = 0; i < infoItems.length; i++) {
-      if (document.querySelector('#' + infoItems[i]).getBoundingClientRect().top <= 0) {
+      if (document.querySelector('#' + infoItems[i]) && document.querySelector('#' + infoItems[i]).getBoundingClientRect().top <= 0) {
         this.activeElement(this.menuItems[i]);
       }
     }
@@ -170,14 +199,14 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     let result = 0;
     for (let i = 0; i < user.data.length; i++) {
       if (user.data[i].required === true) {
-        result ++;
+        result++;
       }
     }
     return result;
   }
 
   /**
-   * This function return an User has userId in param
+   * This function return an User has userId in param in this.users
    * @param userId userId of User want to get
    */
   getUserByUserId(userId: number) {
@@ -187,6 +216,49 @@ export class HomeComponent implements OnInit, AfterViewChecked {
       }
     }
     return null;
+  }
+
+  /**
+   * This function convert date string to date oject
+   * @param date string want convert to date object
+   */
+  stringToDate(date: string): Date {
+    if (new Date(date).getTime()) {
+      return new Date(date);
+    }
+    return null;
+  }
+
+  /**
+   * This function convert date object to date string
+   * @param date date object want to convert to string
+   */
+  dateToString(date: Date): string {
+    if (new Date(date).getTime()) {
+      return new Date(date).toLocaleDateString();
+    }
+    return null;
+  }
+
+  /**
+   * This function map data of selected user to view data
+   */
+  mapperDataToView(user: User) {
+    user.data[3].fieldValue = this.stringToDate(user.data[3].fieldValue);
+  }
+
+  /**
+   * This function map data of selected user to save data
+   */
+  mapperDataToSave(user: User) {
+    user.data[3].fieldValue = this.dateToString(user.data[3].fieldValue);
+  }
+
+  saveData() {
+    this.users.forEach((user: User) => {
+      this.mapperDataToSave(user);
+    });
+    return this.homeService.saveUserData(this.users);
   }
 
 }

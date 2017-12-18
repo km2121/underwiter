@@ -13,9 +13,9 @@
                 </mat-nav-list>
             </mat-sidenav>
             <mat-sidenav-content class="main-content">
-                <div fxLayout="column">
+                <div fxLayout="column" *ngIf="selectedUser">
                     <mat-form-field>
-                        <mat-select placeholder="Select Role">
+                        <mat-select [(ngModel)]="selectedRole.key" placeholder="Select Role" (change)="properties = propertiesData[selectedRole.key - 1]">
                             <mat-option *ngFor="let role of roles" [value]="role.key">
                                 {{ role.value }}
                             </mat-option>
@@ -25,49 +25,49 @@
                         <span class="info-title">GENERAL INFORMATION</span>
                         <div class="info-content" fxLayout="column">
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Last name">
+                                <input [(ngModel)]="selectedUser.data[0].fieldValue" [disabled]="false" required="true" matInput placeholder="Last name">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="First name">
+                                <input [(ngModel)]="selectedUser.data[1].fieldValue" [disabled]="false" required="true" matInput placeholder="First name">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Middle Initial">
+                                <input [(ngModel)]="selectedUser.data[2].fieldValue" [disabled]="false" required="true" matInput placeholder="Middle Initial">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input matInput [disabled]="false" required="true" [matDatepicker]="dobPicker" placeholder="DOB">
+                                <input [(ngModel)]="selectedUser.data[3].fieldValue" matInput [disabled]="false" required="true" [matDatepicker]="dobPicker" placeholder="DOB">
                                 <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
                                 <mat-datepicker #dobPicker></mat-datepicker>
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Social Security Number">
+                                <input [(ngModel)]="selectedUser.data[4].fieldValue" [disabled]="false" required="true" matInput placeholder="Social Security Number">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Mothers Maiden Name">
+                                <input [(ngModel)]="selectedUser.data[5].fieldValue" [disabled]="false" required="true" matInput placeholder="Mothers Maiden Name">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <mat-select [disabled]="false" required="true" placeholder="Citizenship Status">
+                                <mat-select [(ngModel)]="selectedUser.data[6].fieldValue" [disabled]="false" required="true" placeholder="Citizenship Status">
                                     <mat-option *ngFor="let status of citizenshipStatus" [value]="status.key">
                                         {{ status.value }}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <mat-select [disabled]="false" required="true" placeholder="If Dual Citizen - List other Country">
+                                <mat-select [(ngModel)]="selectedUser.data[7].fieldValue" [disabled]="false" required="true" placeholder="If Dual Citizen - List other Country">
                                     <mat-option *ngFor="let country of otherCountries" [value]="country.key">
                                         {{ country.value }}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
-                            <mat-radio-group *ngIf="true" [disabled]="false" required="true" fxLayout="column">
+                            <mat-radio-group [(ngModel)]="selectedUser.data[8].fieldValue" *ngIf="true" [disabled]="false" required="true" fxLayout="column">
                                 <span class="placeholder-text">Currently Married?</span>
                                 <mat-radio-button value="1">Yes</mat-radio-button>
                                 <mat-radio-button value="0">No</mat-radio-button>
                             </mat-radio-group>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Spouse's Last name">
+                                <input [(ngModel)]="selectedUser.data[9].fieldValue" [disabled]="false" required="true" matInput placeholder="Spouse's Last name">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Spouse's First name">
+                                <input [(ngModel)]="selectedUser.data[10].fieldValue" [disabled]="false" required="true" matInput placeholder="Spouse's First name">
                             </mat-form-field>
                         </div>
                     </div>
@@ -76,53 +76,53 @@
                         <span class="info-title">ADDRESS INFORMATION</span>
                         <div class="info-content" fxLayout="column">
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Residential Street Address 1">
+                                <input [(ngModel)]="selectedUser.data[11].fieldValue" [disabled]="false" required="true" matInput placeholder="Residential Street Address 1">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Residential Street Address 2">
+                                <input [(ngModel)]="selectedUser.data[12].fieldValue" [disabled]="false" required="true" matInput placeholder="Residential Street Address 2">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Residential City">
+                                <input [(ngModel)]="selectedUser.data[13].fieldValue" [disabled]="false" required="true" matInput placeholder="Residential City">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <mat-select [disabled]="false" required="true" placeholder="Residential State">
+                                <mat-select [(ngModel)]="selectedUser.data[14].fieldValue" [disabled]="false" required="true" placeholder="Residential State">
                                     <mat-option *ngFor="let state of states" [value]="state.key">
                                         {{ state.value }}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Residential Zip Code">
+                                <input [(ngModel)]="selectedUser.data[15].fieldValue" [disabled]="false" required="true" matInput placeholder="Residential Zip Code">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Years at this Address">
+                                <input [(ngModel)]="selectedUser.data[16].fieldValue" [disabled]="false" required="true" matInput placeholder="Years at this Address">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Months at this Address">
+                                <input [(ngModel)]="selectedUser.data[17].fieldValue" [disabled]="false" required="true" matInput placeholder="Months at this Address">
                             </mat-form-field>
-                            <mat-radio-group *ngIf="true" [disabled]="false" required="true" fxLayout="column">
+                            <mat-radio-group [(ngModel)]="selectedUser.data[18].fieldValue" *ngIf="true" [disabled]="false" required="true" fxLayout="column">
                                 <span class="placeholder-text">Mailing Address same as Residential Address?</span>
                                 <mat-radio-button value="1">Yes</mat-radio-button>
                                 <mat-radio-button value="0">No</mat-radio-button>
                             </mat-radio-group>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Mailing Street Address 1">
+                                <input [(ngModel)]="selectedUser.data[19].fieldValue" [disabled]="false" required="true" matInput placeholder="Mailing Street Address 1">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Mailing Street Address 2">
+                                <input [(ngModel)]="selectedUser.data[20].fieldValue" [disabled]="false" required="true" matInput placeholder="Mailing Street Address 2">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Mailing City">
+                                <input [(ngModel)]="selectedUser.data[21].fieldValue" [disabled]="false" required="true" matInput placeholder="Mailing City">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <mat-select [disabled]="false" required="true" placeholder="Mailing State">
+                                <mat-select [(ngModel)]="selectedUser.data[22].fieldValue" [disabled]="false" required="true" placeholder="Mailing State">
                                     <mat-option *ngFor="let state of states" [value]="state.key">
                                         {{ state.value }}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input [disabled]="false" required="true" matInput placeholder="Mailing Zip Code">
+                                <input [(ngModel)]="selectedUser.data[23].fieldValue" [disabled]="false" required="true" matInput placeholder="Mailing Zip Code">
                             </mat-form-field>
                         </div>
                     </div>
@@ -131,19 +131,19 @@
                         <span class="info-title">CONTACT INFORMATION</span>
                         <div class="info-content" fxLayout="column">
                             <mat-form-field *ngIf="true">
-                                <input type="tel" [disabled]="false" required="true" matInput placeholder="Home Phone">
+                                <input [(ngModel)]="selectedUser.data[24].fieldValue" type="tel" [disabled]="false" required="true" matInput placeholder="Home Phone">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="tel" [disabled]="false" required="true" matInput placeholder="Work Phone">
+                                <input [(ngModel)]="selectedUser.data[25].fieldValue" type="tel" [disabled]="false" required="true" matInput placeholder="Work Phone">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="tel" [disabled]="false" required="true" matInput placeholder="Mobile Phone">
+                                <input [(ngModel)]="selectedUser.data[26].fieldValue" type="tel" [disabled]="false" required="true" matInput placeholder="Mobile Phone">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="email" [disabled]="false" required="true" matInput placeholder="Personal Email Address">
+                                <input [(ngModel)]="selectedUser.data[27].fieldValue" type="email" [disabled]="false" required="true" matInput placeholder="Personal Email Address">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="email" [disabled]="false" required="true" matInput placeholder="Work Email Address">
+                                <input [(ngModel)]="selectedUser.data[28].fieldValue" type="email" [disabled]="false" required="true" matInput placeholder="Work Email Address">
                             </mat-form-field>
                         </div>
                     </div>
@@ -152,39 +152,39 @@
                         <span class="info-title">EMPLOYMENT INFORMATION</span>
                         <div class="info-content" fxLayout="column">
                             <mat-form-field *ngIf="true">
-                                <mat-select [disabled]="false" required="true" placeholder="Employment Status">
+                                <mat-select [(ngModel)]="selectedUser.data[29].fieldValue" [disabled]="false" required="true" placeholder="Employment Status">
                                     <mat-option *ngFor="let status of empStatus" [value]="status.key">
                                         {{ status.value }}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="text" [disabled]="false" required="true" matInput placeholder="Employer Name">
+                                <input [(ngModel)]="selectedUser.data[30].fieldValue" type="text" [disabled]="false" required="true" matInput placeholder="Employer Name">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="number" [disabled]="false" required="true" matInput placeholder="Years at this Employer">
+                                <input [(ngModel)]="selectedUser.data[31].fieldValue" type="number" [disabled]="false" required="true" matInput placeholder="Years at this Employer">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="text" [disabled]="false" required="true" matInput placeholder="Occupation">
+                                <input [(ngModel)]="selectedUser.data[32].fieldValue" type="text" [disabled]="false" required="true" matInput placeholder="Occupation">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="text" [disabled]="false" required="true" matInput placeholder="Employer Street Address 1">
+                                <input [(ngModel)]="selectedUser.data[33].fieldValue" type="text" [disabled]="false" required="true" matInput placeholder="Employer Street Address 1">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="text" [disabled]="false" required="true" matInput placeholder="Employer Street Address 2">
+                                <input [(ngModel)]="selectedUser.data[34].fieldValue" type="text" [disabled]="false" required="true" matInput placeholder="Employer Street Address 2">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="text" [disabled]="false" required="true" matInput placeholder="City">
+                                <input [(ngModel)]="selectedUser.data[35].fieldValue" type="text" [disabled]="false" required="true" matInput placeholder="City">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <mat-select [disabled]="false" required="true" placeholder="State">
+                                <mat-select [(ngModel)]="selectedUser.data[36].fieldValue" [disabled]="false" required="true" placeholder="State">
                                     <mat-option *ngFor="let state of states" [value]="state.key">
                                         {{ state.value }}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="number" [disabled]="false" required="true" matInput placeholder="Zip code">
+                                <input [(ngModel)]="selectedUser.data[37].fieldValue" type="number" [disabled]="false" required="true" matInput placeholder="Zip code">
                             </mat-form-field>
                         </div>
                     </div>
@@ -193,29 +193,29 @@
                         <span class="info-title">FINANCIAL INFORMATION</span>
                         <div class="info-content" fxLayout="column">
                             <mat-form-field *ngIf="true">
-                                <input type="number" [disabled]="false" required="true" matInput placeholder="Annual Income">
+                                <input [(ngModel)]="selectedUser.data[38].fieldValue" type="number" [disabled]="false" required="true" matInput placeholder="Annual Income">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="number" [disabled]="false" required="true" matInput placeholder="Net Worth">
+                                <input [(ngModel)]="selectedUser.data[39].fieldValue" type="number" [disabled]="false" required="true" matInput placeholder="Net Worth">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="number" [disabled]="false" required="true" matInput placeholder="Total Assets">
+                                <input [(ngModel)]="selectedUser.data[40].fieldValue" type="number" [disabled]="false" required="true" matInput placeholder="Total Assets">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="text" [disabled]="false" required="true" matInput placeholder="Source Of Income">
+                                <input [(ngModel)]="selectedUser.data[41].fieldValue" type="text" [disabled]="false" required="true" matInput placeholder="Source Of Income">
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <textarea type="text" [disabled]="false" required="true" matInput placeholder="Source Of Wealth"></textarea>
+                                <textarea [(ngModel)]="selectedUser.data[42].fieldValue" type="text" [disabled]="false" required="true" matInput placeholder="Source Of Wealth"></textarea>
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <mat-select [disabled]="false" required="true" placeholder="Account Type">
+                                <mat-select [(ngModel)]="selectedUser.data[43].fieldValue" [disabled]="false" required="true" placeholder="Account Type">
                                     <mat-option *ngFor="let type of accountTypes" [value]="type.key">
                                         {{ type.value }}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
                             <mat-form-field *ngIf="true">
-                                <input type="text" [disabled]="false" required="true" matInput placeholder="Account Number">
+                                <input [(ngModel)]="selectedUser.data[44].fieldValue" type="text" [disabled]="false" required="true" matInput placeholder="Account Number">
                             </mat-form-field>
                         </div>
                     </div>
@@ -223,29 +223,29 @@
                     <div class="info-container" id="section6" fxLayout="column">
                         <span class="info-title">LEGAL INFORMATION</span>
                         <div class="info-content" fxLayout="column">
-                            <mat-radio-group *ngIf="true" [disabled]="false" required="true" fxLayout="column">
+                            <mat-radio-group [(ngModel)]="selectedUser.data[45].fieldValue" *ngIf="true" [disabled]="false" required="true" fxLayout="column">
                                 <span class="placeholder-text">Are you a current or Senior Political Official or a Family Member or close associate of one?</span>
                                 <mat-radio-button value="1">Yes</mat-radio-button>
                                 <mat-radio-button value="0">No</mat-radio-button>
                             </mat-radio-group>
-                            <mat-radio-group *ngIf="true" [disabled]="false" required="true" fxLayout="column">
+                            <mat-radio-group [(ngModel)]="selectedUser.data[46].fieldValue" *ngIf="true" [disabled]="false" required="true" fxLayout="column">
                                 <span class="placeholder-text">Are you a defendant in any suit or legal action?</span>
                                 <mat-radio-button value="1">Yes</mat-radio-button>
                                 <mat-radio-button value="0">No</mat-radio-button>
                             </mat-radio-group>
-                            <mat-radio-group *ngIf="true" [disabled]="false" required="true" fxLayout="column">
+                            <mat-radio-group [(ngModel)]="selectedUser.data[47].fieldValue" *ngIf="true" [disabled]="false" required="true" fxLayout="column">
                                 <span class="placeholder-text">Have you ever gone through bankruptcy or had a judgement against you?</span>
                                 <mat-radio-button value="1">Yes</mat-radio-button>
                                 <mat-radio-button value="0">No</mat-radio-button>
                             </mat-radio-group>
                             <mat-form-field *ngIf="true">
-                                <textarea type="text" [disabled]="false" required="true" matInput placeholder="If you answered yes to any of these questions, please supply the details"></textarea>
+                                <textarea [(ngModel)]="selectedUser.data[48].fieldValue" type="text" [disabled]="false" required="true" matInput placeholder="If you answered yes to any of these questions, please supply the details"></textarea>
                             </mat-form-field>
                         </div>
                     </div>
                     <div class="info-container mt-5" fxLayout="column">
                         <div class="info-content" fxLayout="row" fxLayoutAlign="center center">
-                            <button class="mr-2" mat-raised-button color="primary">Save</button>
+                            <button class="mr-2" mat-raised-button color="primary" (click)="saveData()">Save</button>
                             <button class="ml-2" mat-raised-button>Reset</button>
                         </div>
                     </div>
@@ -255,7 +255,7 @@
     </div>
     <div fxFlex="28" fxLayout="column" fxLayoutAlign="start start" [appScrollSpy]="60" [className]="'right-content-spy'">
         <div fxLayout="column">
-            <div class="user-content mb-3" *ngFor="let user of users">
+            <div class="user-content mb-3" *ngFor="let user of users" (click)="changeUser(user.userId)" [ngClass]="{'user-content-active': user.userId === selectedUser.userId}">
                 <div class="progress mb-2">
                     <div class="progress-bar progress-bar-success" role="progressbar" [ngStyle]="{'width': calcCompletePercent(user.userId)}">
                         {{calcCompletePercent(user.userId)}} Complete

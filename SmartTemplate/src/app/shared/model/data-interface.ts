@@ -1,7 +1,7 @@
 export interface UserData {
     category?: string;
     fieldName?: string;
-    fieldValue?: string;
+    fieldValue?: any;
     controlType?: string;
     maxLength?: string;
     enable?: boolean;
