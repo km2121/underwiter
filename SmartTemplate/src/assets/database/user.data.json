@@ -59,7 +59,7 @@
             "required": false
         },
         "citizenshipStatus": {
-            "value": 1, // this is the key, value in view is US Citizen
+            "value": 1,
             "controlType": "comboBox",
             "maxLength": "50",
             "enable": true,
@@ -67,7 +67,7 @@
             "required": false
         },
         "dualCitizen": {
-            "value": 1, // this is the key, value in view is Great Britain
+            "value": 1,
             "controlType": "comboBox",
             "maxLength": "50",
             "enable": true,
@@ -75,7 +75,7 @@
             "required": false
         },
         "married": {
-            "value": 1, // Yes
+            "value": 1,
             "controlType": "radioGroup",
             "maxLength": "50",
             "enable": true,
@@ -155,7 +155,7 @@
             "required": false
         },
         "mailingAddressIsSame": {
-            "value": 1, // Yes
+            "value": 1,
             "controlType": "radioGroup",
             "maxLength": "50",
             "enable": true,
@@ -187,7 +187,7 @@
             "required": false
         },
         "mailingState": {
-            "value": 1, // this is the key, value in view is Alaska,
+            "value": 1,
             "controlType": "comboBox",
             "maxLength": "50",
             "enable": true,
@@ -243,7 +243,7 @@
             "required": false
         },
         "employmentStatus": {
-            "value": 1, // this is the key, value in view is Full-time employed,
+            "value": 1,
             "controlType": "comboBox",
             "maxLength": "50",
             "enable": true,
@@ -299,7 +299,7 @@
             "required": false
         },
         "employerState": {
-            "value": 1, // this is the key, value in view is Alabama,
+            "value": 1,
             "controlType": "comboBox",
             "maxLength": "50",
             "enable": true,
@@ -355,7 +355,7 @@
             "required": false
         },
         "accountType": {
-            "value": 1, // this is the key, value in view is Checking,
+            "value": 1,
             "controlType": "comboBox",
             "maxLength": "50",
             "enable": true,
@@ -371,7 +371,7 @@
             "required": false
         },
         "seniorPoliticalOffical": {
-            "value": 1, // Yes
+            "value": 1,
             "controlType": "radioGroup",
             "maxLength": "50",
             "enable": true,
@@ -379,7 +379,7 @@
             "required": false
         },
         "defendant": {
-            "value": 0, // No
+            "value": 0,
             "controlType": "radioGroup",
             "maxLength": "50",
             "enable": true,
@@ -387,7 +387,7 @@
             "required": false
         }, 
         "bankruptcy": {
-            "value": 0, // No
+            "value": 0,
             "controlType": "radioGroup",
             "maxLength": "50",
             "enable": true,
@@ -413,365 +413,367 @@
             "employment",
             "financial"
         ],
-        "firstName": {
-            "value": "Sam",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "lastName": {
-            "value": "Smith",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "middleName": {
-            "value": null,
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "dateOfBirth": {
-            "value": "05/20/1985",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "socialSecurityNumber": {
-            "value": "1234567890",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "mothersMaidenName": {
-            "value": "Mother name",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "citizenshipStatus": {
-            "value": 1, // this is the key, value in view is US Citizen
-            "controlType": "comboBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "dualCitizen": {
-            "value": 1, // this is the key, value in view is Great Britain
-            "controlType": "comboBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "married": {
-            "value": 1, // Yes
-            "controlType": "radioGroup",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "spouseLastName": {
-            "value": "Spouse's last name",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "spouseFirstName": {
-            "value": "Spouse's first name",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "residentialAddress1": {
-            "value": "Residential address 1",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "residentialAddress2": {
-            "value": "Residential address 2",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "residentialCity": {
-            "value": "Residential city",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "residentialState": {
-            "value": "Residential state",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "residentialZipcode": {
-            "value": "11101",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "yearAtThisAddress": {
-            "value": "5",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "monthAtThisAddress": {
-            "value": "8",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "mailingAddressIsSame": {
-            "value": 1, // Yes
-            "controlType": "radioGroup",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "mailingAddress1": {
-            "value": "Mailing address 1",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "mailingAddress2": {
-            "value": "Mailing address 2",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "mailingCity": {
-            "value": "Mailing city",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "mailingState": {
-            "value": 1, // this is the key, value in view is Alaska,
-            "controlType": "comboBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "mailingZipcode": {
-            "value": "11101",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "homePhone": {
-            "value": "1111231231234",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "workPhone": {
-            "value": "1111231231235",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "mobilePhone": {
-            "value": "1111231231236",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "personalEmailAddress": {
-            "value": "personal@mail.com",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "workEmailAddress": {
-            "value": "work@mail.com",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "employmentStatus": {
-            "value": 1, // this is the key, value in view is Full-time employed,
-            "controlType": "comboBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "employerName": {
-            "value": "Employer name",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "yearsAtThisEmployer": {
-            "value": "2",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "occupation": {
-            "value": "Oppcupation",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "employerAddress1": {
-            "value": "Emp address 1",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "employerAddress2": {
-            "value": "Emp address 2",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "employerCity": {
-            "value": "Employer city",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "employerState": {
-            "value": 1, // this is the key, value in view is Alabama,
-            "controlType": "comboBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        }, 
-        "eployerZipcode": {
-            "value": "11101",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "annualIncome": {
-            "value": "15000",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "netWorth": {
-            "value": "20000",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "totalAssets": {
-            "value": "25000",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "sourceOfIncome": {
-            "value": "Source of income",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "sourceOfWealth": {
-            "value": "Source of wealth",
-            "controlType": "textArea",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },
-        "accountType": {
-            "value": 1, // this is the key, value in view is Checking,
-            "controlType": "comboBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
-        },  
-        "accountNumber":{
-            "value": " 1234567890",
-            "controlType": "textBox",
-            "maxLength": "50",
-            "enable": true,
-            "show": true,
-            "required": false
+        "data": {
+            "firstName": {
+                "value": "Sam",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "lastName": {
+                "value": "Smith",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "middleName": {
+                "value": null,
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "dateOfBirth": {
+                "value": "05/20/1985",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "socialSecurityNumber": {
+                "value": "1234567890",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "mothersMaidenName": {
+                "value": "Mother name",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "citizenshipStatus": {
+                "value": 1,
+                "controlType": "comboBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "dualCitizen": {
+                "value": 1,
+                "controlType": "comboBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "married": {
+                "value": 1,
+                "controlType": "radioGroup",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "spouseLastName": {
+                "value": "Spouse's last name",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "spouseFirstName": {
+                "value": "Spouse's first name",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "residentialAddress1": {
+                "value": "Residential address 1",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "residentialAddress2": {
+                "value": "Residential address 2",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "residentialCity": {
+                "value": "Residential city",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "residentialState": {
+                "value": "Residential state",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "residentialZipcode": {
+                "value": "11101",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "yearAtThisAddress": {
+                "value": "5",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "monthAtThisAddress": {
+                "value": "8",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "mailingAddressIsSame": {
+                "value": 1,
+                "controlType": "radioGroup",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "mailingAddress1": {
+                "value": "Mailing address 1",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "mailingAddress2": {
+                "value": "Mailing address 2",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "mailingCity": {
+                "value": "Mailing city",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "mailingState": {
+                "value": 1,
+                "controlType": "comboBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "mailingZipcode": {
+                "value": "11101",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "homePhone": {
+                "value": "1111231231234",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "workPhone": {
+                "value": "1111231231235",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "mobilePhone": {
+                "value": "1111231231236",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "personalEmailAddress": {
+                "value": "personal@mail.com",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "workEmailAddress": {
+                "value": "work@mail.com",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "employmentStatus": {
+                "value": 1,
+                "controlType": "comboBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "employerName": {
+                "value": "Employer name",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "yearsAtThisEmployer": {
+                "value": "2",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "occupation": {
+                "value": "Oppcupation",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "employerAddress1": {
+                "value": "Emp address 1",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "employerAddress2": {
+                "value": "Emp address 2",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "employerCity": {
+                "value": "Employer city",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "employerState": {
+                "value": 1,
+                "controlType": "comboBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            }, 
+            "eployerZipcode": {
+                "value": "11101",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "annualIncome": {
+                "value": "15000",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "netWorth": {
+                "value": "20000",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "totalAssets": {
+                "value": "25000",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "sourceOfIncome": {
+                "value": "Source of income",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "sourceOfWealth": {
+                "value": "Source of wealth",
+                "controlType": "textArea",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },
+            "accountType": {
+                "value": 1,
+                "controlType": "comboBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            },  
+            "accountNumber":{
+                "value": " 1234567890",
+                "controlType": "textBox",
+                "maxLength": "50",
+                "enable": true,
+                "show": true,
+                "required": false
+            }
         }
     }
 ]
