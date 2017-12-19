@@ -6,7 +6,7 @@
             "categoryId": 1,
             "categoryName": "General",
             "visible": true,
-            "data": [
+            "components": [
                 {
                     "fieldName": null,
                     "fieldValue": null,
