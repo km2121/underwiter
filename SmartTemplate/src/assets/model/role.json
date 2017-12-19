@@ -1,0 +1,22 @@
+{
+    "roleId": 1,
+    "roleName": "Borrower",
+    "categories": [
+        {
+            "categoryId": 1,
+            "categoryName": "General",
+            "visible": true,
+            "data": [
+                {
+                    "fieldName": null,
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                }
+            ]
+        }
+    ]
+}
