@@ -1,0 +1,23 @@
+{
+    "userId": null,
+    "roleId": null,
+    "roleType": null,
+    "categories": [
+        {
+            "categoryId": 1,
+            "categoryName": "General",
+            "visible": true,
+            "components": [
+                {
+                    "fieldName": null,
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                }
+            ]
+        }
+    ]
+}

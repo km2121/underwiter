@@ -1,0 +1,8 @@
+{
+    "input": "textBox",
+    "textArea": "textArea",
+    "select": "comboBox",
+    "multipleSelect": "multiSelectBox",
+    "radioButton": "radioBox",
+    "datepicker": "datepicker"
+}
