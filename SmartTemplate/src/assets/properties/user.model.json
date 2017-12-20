@@ -1,0 +1,483 @@
+{
+    "userId": null,
+    "participantType": null,
+    "information": [
+        {
+            "categoryName": "General",
+            "show": false,
+            "data": [
+                {
+                    "fieldName": "Last name",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "First name",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Middle initial",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Date of birth",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Social Security Number",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Mothers Maiden Name",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Citizenship Status",
+                    "controlType": "comboBox",
+                    "maxLength": 0,
+                    "fieldValue": null,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "If Dual Citizen - List other Country",
+                    "controlType": "multiSelectBox",
+                    "maxLength": 0,
+                    "fieldValue": null,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Maritial Status",
+                    "controlType": "radioBox",
+                    "maxLength": 0,
+                    "fieldValue": null,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Spouse’s Last name",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Spouse’s First name",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                }
+            ]
+        },
+        {
+            "categoryName": "Address",
+            "show": false,
+            "data": [
+                {
+                    "fieldName": "Residential Street Address 1",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Residential Street Address 2",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Residential City",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Residential State",
+                    "fieldValue": null,
+                    "controlType": "comboBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Residential Zip Code",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Years at this Address",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Months at this Address",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Mailing Address same as Residential Address?",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Mailing Street Address 1",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Mailing Street Address 2",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Mailing City",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Mailing State",
+                    "fieldValue": null,
+                    "controlType": "comboBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Mailing Zip Code",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                }
+            ]
+        },
+        {
+            "categoryName": "Contact",
+            "show": false,
+            "data": [
+                {
+                    "fieldName": "Home Phone",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Work Phone",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Mobile Phone",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Personal Email Address",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Work Email Address",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                }
+            ]
+        },
+        {
+            "categoryName": "Employment",
+            "show": false,
+            "data": [
+                {
+                    "fieldName": "Employment Status",
+                    "fieldValue": null,
+                    "controlType": "comboBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Employer Name",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Years at this Employer",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Occupation",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Employer Street Address 1",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Employer Street Address 2",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "City",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": "25",
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "State",
+                    "fieldValue": null,
+                    "controlType": "comboBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Zip Code",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                }
+            ]
+        },
+        {
+            "categoryName": "Financial",
+            "show": false,
+            "data": [
+                {
+                    "fieldName": "Annual Income",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Net Worth",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Total Assets",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Source Of Income",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Source Of Wealth",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Account Type",
+                    "fieldValue": null,
+                    "controlType": "comboBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Account Number",
+                    "fieldValue": null,
+                    "controlType": "textBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                }
+            ]
+        },
+        {
+            "categoryName": "Legal",
+            "show": false,
+            "data": [
+                {
+                    "fieldName": "Are you a current or Senior Political Official or a Family Member or close associate of one?",
+                    "fieldValue": null,
+                    "controlType": "radioBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Are you a defendant in any suit or legal action?",
+                    "fieldValue": null,
+                    "controlType": "radioBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "Have you ever gone through bankruptcy or had a judgement against you?",
+                    "fieldValue": null,
+                    "controlType": "radioBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                },
+                {
+                    "fieldName": "If you answered yes to any of these questions, please supply the details",
+                    "fieldValue": null,
+                    "controlType": "radioBox",
+                    "maxLength": 0,
+                    "enable": false,
+                    "show": false,
+                    "required": false
+                }
+            ]
+        }
+    ]
+}
