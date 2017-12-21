@@ -1,0 +1,21 @@
+{
+    "fieldId": 15,
+    "stateList": [
+        {
+            "key": "NJ",
+            "value": "New Jersey"
+        },
+		{
+             "key": "NY",
+             "value": "New York"
+        },
+		{
+             "key": "DE",
+             "value": "Delware"
+        },
+		{
+            "key": "VT",
+             "value": "Vermont"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "fieldId": 7,
+    "countryList": [
+        {
+            "key": "US",
+            "value": "United States"
+        },
+		{
+            "key": "UK",
+            "value": "United Kingdom"
+        },
+		{
+            "key": "FR",
+            "value": "France"
+        },
+				{
+            "key": "VM",
+            "value": "Vietnam"
+        }
+    ]
+}

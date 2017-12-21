@@ -1,0 +1,30 @@
+<mat-form-field *ngIf="isInput" fxFill>
+    <input [(ngModel)]="model" [disabled]="isDisable" required="isRequire" matInput placeholder="{{placeholder}}">
+</mat-form-field>
+<mat-form-field *ngIf="isDropdown" fxFill>
+    <mat-select [(ngModel)]="model" [disabled]="isDisable" required="isRequire" placeholder="{{placeholder}}">
+        <mat-option *ngFor="let data of extraData" [value]="status.key">
+            {{ status.value }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field *ngIf="isDropdownMultiple" fxFill>
+    <mat-select [(ngModel)]="model" [disabled]="isDisable" required="isRequire" placeholder="{{placeholder}}">
+        <mat-option *ngFor="let status of empStatus" [value]="status.key">
+            {{ status.value }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field *ngIf="isDatepicker" fxFill>
+    <input [(ngModel)]="model" matInput [disabled]="isDisable" required="isRequire" [matDatepicker]="dobPicker" placeholder="{{placeholder}}">
+    <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+    <mat-datepicker #dobPicker></mat-datepicker>
+</mat-form-field>
+<mat-radio-group [(ngModel)]="model" *ngIf="isRadioGroup" [disabled]="isDisable" required="isRequire" fxLayout="column" fxFill>
+    <span class="placeholder-text">{{placeholder}}</span>
+    <mat-radio-button value="1">Yes</mat-radio-button>
+    <mat-radio-button value="0">No</mat-radio-button>
+</mat-radio-group>
+<mat-form-field *ngIf="isTextArea" fxFill>
+    <textarea [(ngModel)]="model" [disabled]="isDisable" required="isRequire" matInput placeholder="{{placeholder}}"></textarea>
+</mat-form-field>

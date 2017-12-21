@@ -1,6 +1,7 @@
-import { Component, OnInit, Renderer, HostListener, AfterViewInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, Renderer, HostListener, AfterViewChecked } from '@angular/core';
 import { HomeService } from './home.service';
-import { User } from '../shared';
+import { DomService } from './dom.service';
+import { User, Menu } from '../shared';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,6 @@ import { User } from '../shared';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewChecked {
-  propertiesData: any;
-  properties: any;
   roles: any;
   selectedRole: any;
   citizenshipStatus: object[];
@@ -19,28 +18,30 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   accountTypes: object[];
   isScrollByClick: boolean;
   menuItems: HTMLCollection;
-  users: User[];
   firstInit: boolean;
+  users: User[];
   selectedUser: User;
+  usersMenuData: Menu[];
+  selectedUserMenu: Menu;
 
   constructor(
     private homeService: HomeService,
-    private renderer: Renderer
+    private renderer: Renderer,
+    private domService: DomService
   ) { }
 
   ngOnInit() {
     this.firstInit = true; // flag to check first time init of component, after this, do not run the code in ngAfterViewChecked
+    this.usersMenuData = [];
     this.users = [];
-    this.loadComponentProperties();
-    this.loadComponentData();
-    this.loadUserData();
+    this.loadUserData().add(this.initMenu()).add(this.loadParticipantType());
   }
 
   ngAfterViewChecked() {
     // check element has been init or not. Because use *ngIf in html, must to check at ngAfterViewChecked
     if (document.getElementById('nav-list') && this.firstInit === true) {
       this.menuItems = document.getElementById('nav-list').children;
-      this.activeElement(this.menuItems[0]);
+      this.activeElement(this.menuItems[0].children[0]);
       this.firstInit = false;
     }
   }
@@ -48,15 +49,9 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   /**
    * This function load component data such as dropdown, group radion button
    */
-  loadComponentData() {
-    return this.homeService.getComponentData().then((response) => {
-      this.roles = response.ROLES;
-      this.selectedRole = this.roles[0];
-      this.citizenshipStatus = response.CITIZENSHIP;
-      this.otherCountries = response.OTHER_COUNTRIES;
-      this.states = response.STATES;
-      this.empStatus = response.EMP_STATUS;
-      this.accountTypes = response.ACCOUNT_TYPES;
+  loadParticipantType() {
+    this.homeService.getParticipantTypeData().subscribe((data) => {
+      this.roles = data;
     });
   }
 
@@ -64,10 +59,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
    * This function load component properties for each component in view
    */
   loadComponentProperties() {
-    return this.homeService.getComponentProperties().then((response) => {
-      this.propertiesData = response;
-      this.properties = this.propertiesData[0];
-    });
+
   }
 
   /**
@@ -75,12 +67,38 @@ export class HomeComponent implements OnInit, AfterViewChecked {
    * Set selected user is fist user in list
    */
   loadUserData() {
-    return this.homeService.getUserData().then((data) => {
-      if (data && data.length > 0) {
-        this.users = data;
-        this.changeUser(this.users[0].userId);
-      }
+    return this.homeService.getUsers().subscribe((data: User[]) => {
+      this.users = data;
+      this.selectedUser = data[0];
+    }, (error) => {
+      // handle error
     });
+  }
+
+  initMenu() {
+    this.homeService.getMenus().subscribe((data) => {
+      this.usersMenuData = data;
+      this.selectedUserMenu = this.getMenuByUser(this.selectedUser);
+    }, (error) => {
+      return error;
+    });
+  }
+
+  getMenuByUser(user: User) {
+    for (let i = 0; i < this.usersMenuData.length; i++) {
+      if (user.loanParticpantId === this.usersMenuData[i].loanParticpantId) {
+        return this.usersMenuData[i];
+      }
+    }
+    return null;
+  }
+
+  getMenuNameById(menuId: string) {
+    for (let i = 0; i < this.selectedUserMenu.data.length; i++) {
+      if (menuId === this.selectedUserMenu.data[i].menuId) {
+        return this.selectedUserMenu.data[i].menuName;
+      }
+    }
   }
 
   /**
@@ -88,7 +106,8 @@ export class HomeComponent implements OnInit, AfterViewChecked {
    */
   changeUser(userId: number) {
     this.selectedUser = this.getUserByUserId(userId);
-    this.mapperDataToView(this.selectedUser);
+    this.selectedUserMenu = this.getMenuByUser(this.selectedUser);
+    // this.mapperDataToView(this.selectedUser);
   }
 
   /**
@@ -111,14 +130,14 @@ export class HomeComponent implements OnInit, AfterViewChecked {
       this.isScrollByClick = false;
       return;
     }
-    const infoItems = ['section1', 'section2', 'section3', 'section4', 'section5', 'section6'];
-    for (let i = 0; i < infoItems.length; i++) {
-      if (document.querySelector('#' + infoItems[i]) && document.querySelector('#' + infoItems[i]).getBoundingClientRect().top <= 0) {
-        this.activeElement(this.menuItems[i]);
+    for (let i = 0; i < this.selectedUserMenu.data.length; i++) {
+      if (document.querySelector('#' + this.selectedUserMenu.data[i].menuId) &&
+        document.querySelector('#' + this.selectedUserMenu.data[i].menuId).getBoundingClientRect().top <= 0) {
+        this.activeElement(this.menuItems[i].children[0]);
       }
     }
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      this.activeElement(this.menuItems[this.menuItems.length - 2]);
+      this.activeElement(this.menuItems[this.menuItems.length - 2].children[0]);
     }
   }
 
@@ -128,7 +147,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
    */
   activeElement(element) {
     for (let i = 0; i < this.menuItems.length; i++) {
-      this.menuItems.item(i).classList.remove('active-menu');
+      this.menuItems.item(i).children[0].classList.remove('active-menu');
     }
     this.renderer.setElementClass(element, 'active-menu', true);
   }
@@ -145,8 +164,8 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   getUserRole(key: number): string {
     let result: string;
     for (let i = 0; i < this.roles.length; i++) {
-      if (this.roles[i].key === key) {
-        result = this.roles[i].value;
+      if (this.roles[i].participantTypeId === key) {
+        result = this.roles[i].participantTypeName;
       }
     }
     return result;
@@ -156,53 +175,47 @@ export class HomeComponent implements OnInit, AfterViewChecked {
    * This function return user name = first name + last name
    * @param userId
    */
-  getUserName(userId: number): string {
-    let result: string;
-    const user = this.getUserByUserId(userId);
-    if (user) {
-      result = user.data[1].fieldValue + ' ' + user.data[0].fieldValue;
+  getUserName(user: User) {
+    const lastNameField = 'Last name';
+    const firstNameField = 'First name';
+    let lastName;
+    let firstName;
+    for (let i = 0; i < user.data.length; i++) {
+      for (let j = 0; j < user.data[i].fields.length; j++) {
+        if (user.data[i].fields[j].fieldName === lastNameField) {
+          lastName = user.data[i].fields[j].fieldValue;
+        }
+        if (user.data[i].fields[j].fieldName === firstNameField) {
+          firstName = user.data[i].fields[j].fieldValue;
+        }
+      }
     }
-    return result;
+    return firstName + ' ' + lastName;
   }
 
   /**
    * This function return the percent complete the form base on required field has been enter information
-   * @param userId
+   * @param user
    */
-  calcCompletePercent(userId: number) {
-    const user = this.getUserByUserId(userId);
-    if (user) {
-      const totalField = user.data.length;
-      // total required fields of user
-      const requiredFields = this.calcTotalRequireField(user);
-      const unrequiredFields = totalField - requiredFields;
-      // calculate completed require fields
-      let completeRequireFields = 0;
-      for (let i = 0; i < user.data.length; i++) {
-        if (user.data[i].required === true && user.data[i].fieldValue.length > 0) {
-          completeRequireFields++;
+  calcCompletePercent(user: User) {
+    let totalFields = 0;
+    let completedFields = 0;
+    for (let i = 0; i < user.data.length; i++) {
+      for (let j = 0; j < user.data[i].fields.length; j++) {
+        if (user.data[i].fields[j].fieldValue !== null && user.data[i].fields[j].fieldValue.length > 0) {
+          completedFields++;
         }
+        totalFields++;
       }
-      // calculate unrequired field percent in form
-      const unrequiredFieldPercent = Math.floor((unrequiredFields / totalField) * 100);
-      // calculate required filed complete percent in form
-      const requiredFieldCompletePercent = Math.floor((completeRequireFields / totalField) * 100);
-      return unrequiredFieldPercent + requiredFieldCompletePercent + '%';
     }
+    return Math.floor(completedFields / totalFields * 100) + '%';
   }
 
   /**
    * This function calculate complete percent of required fields
    * @param user user want to calculate complete percent
    */
-  calcTotalRequireField(user: User): number {
-    let result = 0;
-    for (let i = 0; i < user.data.length; i++) {
-      if (user.data[i].required === true) {
-        result++;
-      }
-    }
-    return result;
+  calcTotalRequireField(user: User) {
   }
 
   /**
@@ -211,7 +224,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
    */
   getUserByUserId(userId: number) {
     for (let i = 0; i < this.users.length; i++) {
-      if (userId === this.users[i].userId) {
+      if (userId === this.users[i].loanParticpantId) {
         return this.users[i];
       }
     }
@@ -240,24 +253,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     return null;
   }
 
-  /**
-   * This function map data of selected user to view data
-   */
-  mapperDataToView(user: User) {
-    user.data[3].fieldValue = this.stringToDate(user.data[3].fieldValue);
-  }
-
-  /**
-   * This function map data of selected user to save data
-   */
-  mapperDataToSave(user: User) {
-    user.data[3].fieldValue = this.dateToString(user.data[3].fieldValue);
-  }
-
   saveData() {
-    this.users.forEach((user: User) => {
-      this.mapperDataToSave(user);
-    });
     return this.homeService.saveUserData(this.users);
   }
 

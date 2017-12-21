@@ -1,0 +1,69 @@
+[
+	{
+		"loanParticpantId": 5,
+		"participantTypeId": 1,
+		"data": [
+			{
+				"menuId": "general",
+				"menuName": "GENERAL",
+				"show": true
+			},
+			{
+				"menuId": "address",
+				"menuName": "ADDRESS",
+				"show": true
+			},
+			{
+				"menuId": "contact",
+				"menuName": "CONTACT",
+				"show": true
+			},
+			{
+				"menuId": "employment",
+				"menuName": "EMPLOYMENT",
+				"show": true
+			},
+			{
+				"menuId": "financial",
+				"menuName": "FINANCIAL",
+				"show": true
+			},
+			{
+				"menuId": "legal",
+				"menuName": "LEGAL",
+				"show": true
+			}
+		]
+	},
+	{
+		"loanParticpantId": 2,
+		"participantTypeId": 4,
+		"data": [
+			{
+				"menuId": "general",
+				"menuName": "GENERAL",
+				"show": true
+			},
+			{
+				"menuId": "address",
+				"menuName": "ADDRESS",
+				"show": true
+			},
+			{
+				"menuId": "contact",
+				"menuName": "CONTACT",
+				"show": true
+			},
+			{
+				"menuId": "employment",
+				"menuName": "EMPLOYMENT",
+				"show": true
+			},
+			{
+				"menuId": "financial",
+				"menuName": "FINANCIAL",
+				"show": true
+			}
+		]
+	}
+]

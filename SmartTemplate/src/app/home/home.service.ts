@@ -1,44 +1,43 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { User } from '../shared';
+import { HttpClient } from '@angular/common/http';
+import { User, Menu, CountryData, StateData } from '../shared';
 
 @Injectable()
 export class HomeService {
-    private propertiesUrl = '/assets/properties';
-    private resourceUrl = '/assets/database';
+    private dataUrl = '/assets/data';
     constructor(
-        private http: Http
+        private http: HttpClient
     ) {}
 
-    getComponentData() {
-        return this.http.get(this.propertiesUrl + '/component.data.json').toPromise().then((response) => {
-            return response.json();
-        }).catch((error) => {
-            return this.handleError(error);
+    getUsers() {
+        return this.http.get<User[]>(this.dataUrl + '/populate-form-val.json');
+    }
+
+    getMenus() {
+        return this.http.get<Menu[]>(this.dataUrl + '/menu.json');
+    }
+
+    getParticipantTypeData() {
+        return this.http.get(this.dataUrl + '/participantTypeData.json');
+    }
+
+    getCountries() {
+        return this.http.get<CountryData>(this.dataUrl + '/countryData.json').subscribe((data) => {
+            return data;
+        }, (error) => {
+            return error;
         });
     }
 
-    getComponentProperties() {
-        return this.http.get(this.propertiesUrl + '/component.properties.json').toPromise().then((response) => {
-            return response.json();
-        }).catch((error) => {
-            return this.handleError(error);
-        });
-    }
-
-    getUserData() {
-        return this.http.get(this.resourceUrl + '/users.json').toPromise().then((response) => {
-            return response.json();
-        }).catch((err) => {
-            return this.handleError(err);
+    getStates() {
+        return this.http.get<StateData>(this.dataUrl + '/stateData.json').subscribe((data) => {
+            return data;
+        }, (error) => {
+            return error;
         });
     }
 
     saveUserData(users: User[]) {
         console.log(users);
-    }
-
-    handleError(error) {
-        return Promise.reject(error);
     }
 }

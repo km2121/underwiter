@@ -1,0 +1,17 @@
+[
+	{
+        "participantTypeId": 1,
+        "participantTypeName": "Borrower"
+    },
+    {
+        "participantTypeId": 2,
+        "participantTypeName": "CoBorrower"
+    },
+    {
+        "participantTypeId": 3,
+        "participantTypeName": "Trustee"
+    },{
+        "participantTypeId": 4,
+        "participantTypeName": "Pludge"
+    }
+]

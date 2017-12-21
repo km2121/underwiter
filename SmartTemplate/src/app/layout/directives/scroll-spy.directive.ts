@@ -33,22 +33,24 @@ export class ScrollSpyDirective {
         this.lastScrollTop = window.scrollY;
         const childEle = this.el.nativeElement.children[0];
         // fixed if content height short than window height
-        if (childEle.offsetHeight < window.innerHeight) {
-            if (this.document.documentElement.scrollTop > this.appScrollSpy) {
-                this.renderer.setElementClass(this.el.nativeElement, this.className, true);
+        if (childEle) {
+            if (childEle.offsetHeight < window.innerHeight) {
+                if (this.document.documentElement.scrollTop > this.appScrollSpy) {
+                    this.renderer.setElementClass(this.el.nativeElement, this.className, true);
+                } else {
+                    this.renderer.setElementClass(this.el.nativeElement, this.className, false);
+                }
             } else {
-                this.renderer.setElementClass(this.el.nativeElement, this.className, false);
-            }
-        } else {
-            // continue scroll to the bottom of content and fixed
-            const revertClass = this.className + '-revert';
-            if (window.innerHeight - (childEle.offsetHeight + childEle.getBoundingClientRect().top) > 20 && this.scrollUp === false) {
-                // scroll down will trigger this code
-                this.renderer.setElementClass(this.el.nativeElement, revertClass, true);
-            } else if (window.scrollY < window.innerHeight - (childEle.offsetHeight + childEle.getBoundingClientRect().top - 100)
-                        && this.scrollUp === true) {
-                            // scroll up will trigger this code
-                this.renderer.setElementClass(this.el.nativeElement, revertClass, false);
+                // continue scroll to the bottom of content and fixed
+                const revertClass = this.className + '-revert';
+                if (window.innerHeight - (childEle.offsetHeight + childEle.getBoundingClientRect().top) > 20 && this.scrollUp === false) {
+                    // scroll down will trigger this code
+                    this.renderer.setElementClass(this.el.nativeElement, revertClass, true);
+                } else if (window.scrollY < window.innerHeight - (childEle.offsetHeight + childEle.getBoundingClientRect().top - 100)
+                            && this.scrollUp === true) {
+                                // scroll up will trigger this code
+                    this.renderer.setElementClass(this.el.nativeElement, revertClass, false);
+                }
             }
         }
     }
