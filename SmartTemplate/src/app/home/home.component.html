@@ -23,7 +23,7 @@
                             <span class="info-title">{{getMenuNameById(menu.menuId)}} INFORMATION</span>
                             <div class="info-content" fxLayout="column" *ngFor="let field of menu.fields">
                                 <app-custom-material [type]="field.controlType" [model]="field.fieldValue" [isDisable]="!field.enable" [isRequire]="true"
-                                    [placeholder]="field.fieldName"></app-custom-material>
+                                    [placeholder]="field.fieldName" [metadata]="getMetadataForField(field.fieldId)"></app-custom-material>
                             </div>
                         </div>
                         <div class="end-container"></div>

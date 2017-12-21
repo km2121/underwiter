@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User, Menu, CountryData, StateData } from '../shared';
+import { User, Menu, FieldMetadata} from '../shared';
 
 @Injectable()
 export class HomeService {
@@ -21,20 +21,8 @@ export class HomeService {
         return this.http.get(this.dataUrl + '/participantTypeData.json');
     }
 
-    getCountries() {
-        return this.http.get<CountryData>(this.dataUrl + '/countryData.json').subscribe((data) => {
-            return data;
-        }, (error) => {
-            return error;
-        });
-    }
-
-    getStates() {
-        return this.http.get<StateData>(this.dataUrl + '/stateData.json').subscribe((data) => {
-            return data;
-        }, (error) => {
-            return error;
-        });
+    getMetadata() {
+        return this.http.get<FieldMetadata[]>(this.dataUrl + '/field-metadata.json');
     }
 
     saveUserData(users: User[]) {

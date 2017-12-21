@@ -33,24 +33,14 @@ export interface MenuData {
     show?: boolean;
 }
 
-export interface CountryData {
+export interface FieldMetadata {
     fieldId?: number;
-    countryList?: Country[];
+    metadata?: Metadata[];
 }
 
-export interface Country {
-    countryId: string;
-    countryName: string;
-}
-
-export interface StateData {
-    fieldId?: number;
-    stateList?: State[];
-}
-
-export interface State {
-    stateId: string;
-    stateName: string;
+export interface Metadata {
+    key: string;
+    value: string;
 }
 
 

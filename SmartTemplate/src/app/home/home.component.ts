@@ -1,7 +1,6 @@
 import { Component, OnInit, Renderer, HostListener, AfterViewChecked } from '@angular/core';
 import { HomeService } from './home.service';
-import { DomService } from './dom.service';
-import { User, Menu } from '../shared';
+import { User, Menu, FieldMetadata } from '../shared';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +11,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   roles: any;
   selectedRole: any;
   citizenshipStatus: object[];
-  otherCountries: object[];
-  states: object[];
+  fieldMetadata: FieldMetadata[];
   empStatus: object[];
   accountTypes: object[];
   isScrollByClick: boolean;
@@ -26,15 +24,13 @@ export class HomeComponent implements OnInit, AfterViewChecked {
 
   constructor(
     private homeService: HomeService,
-    private renderer: Renderer,
-    private domService: DomService
+    private renderer: Renderer
   ) { }
 
   ngOnInit() {
-    this.firstInit = true; // flag to check first time init of component, after this, do not run the code in ngAfterViewChecked
     this.usersMenuData = [];
     this.users = [];
-    this.loadUserData().add(this.initMenu()).add(this.loadParticipantType());
+    this.loadComponentMetadata().add(this.loadUserData().add(this.initMenu().add(this.loadParticipantType())));
   }
 
   ngAfterViewChecked() {
@@ -50,7 +46,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
    * This function load component data such as dropdown, group radion button
    */
   loadParticipantType() {
-    this.homeService.getParticipantTypeData().subscribe((data) => {
+    return this.homeService.getParticipantTypeData().subscribe((data) => {
       this.roles = data;
     });
   }
@@ -58,8 +54,13 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   /**
    * This function load component properties for each component in view
    */
-  loadComponentProperties() {
-
+  loadComponentMetadata() {
+    return this.homeService.getMetadata().subscribe((data) => {
+      this.fieldMetadata = data;
+      this.firstInit = true; // flag to check first time init of component, after this, do not run the code in ngAfterViewChecked
+    }, (error) => {
+      return error;
+    });
   }
 
   /**
@@ -76,7 +77,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   }
 
   initMenu() {
-    this.homeService.getMenus().subscribe((data) => {
+    return this.homeService.getMenus().subscribe((data) => {
       this.usersMenuData = data;
       this.selectedUserMenu = this.getMenuByUser(this.selectedUser);
     }, (error) => {
@@ -99,6 +100,15 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         return this.selectedUserMenu.data[i].menuName;
       }
     }
+  }
+
+  getMetadataForField(fieldId: number) {
+    for (let i = 0; i < this.fieldMetadata.length; i++) {
+      if (fieldId === this.fieldMetadata[i].fieldId) {
+        return this.fieldMetadata[i].metadata;
+      }
+    }
+    return null;
   }
 
   /**

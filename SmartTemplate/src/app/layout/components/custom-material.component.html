@@ -3,15 +3,15 @@
 </mat-form-field>
 <mat-form-field *ngIf="isDropdown" fxFill>
     <mat-select [(ngModel)]="model" [disabled]="isDisable" required="isRequire" placeholder="{{placeholder}}">
-        <mat-option *ngFor="let data of extraData" [value]="status.key">
-            {{ status.value }}
+        <mat-option *ngFor="let data of metadata" [value]="data.key">
+            {{ data.value }}
         </mat-option>
     </mat-select>
 </mat-form-field>
 <mat-form-field *ngIf="isDropdownMultiple" fxFill>
-    <mat-select [(ngModel)]="model" [disabled]="isDisable" required="isRequire" placeholder="{{placeholder}}">
-        <mat-option *ngFor="let status of empStatus" [value]="status.key">
-            {{ status.value }}
+    <mat-select [(ngModel)]="model" [disabled]="isDisable" required="isRequire" placeholder="{{placeholder}}" multiple>
+        <mat-option *ngFor="let data of metadata" [value]="data.key">
+            {{ data.value }}
         </mat-option>
     </mat-select>
 </mat-form-field>

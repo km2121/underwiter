@@ -11,6 +11,7 @@ export class CustomMaterialComponent implements OnInit {
     @Input() isDisable: boolean;
     @Input() isRequire: boolean;
     @Input() placeholder: string;
+    @Input() metadata: any;
     isInput: boolean;
     isDropdown: boolean;
     isDropdownMultiple: boolean;
@@ -46,6 +47,10 @@ export class CustomMaterialComponent implements OnInit {
                 this.isTextArea = true;
                 break;
             }
+        }
+        if (this.metadata) {
+            console.log(this.metadata);
+            console.log(this.type);
         }
     }
 }

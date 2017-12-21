@@ -16,7 +16,6 @@ import {
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { HomeService } from './home/home.service';
-import { DomService } from './home/dom.service';
 
 import { ScrollSpyDirective } from './layout/directives';
 
@@ -42,8 +41,7 @@ import { APP_ROUTE } from './app-routing.module';
     CustomMaterialComponent
   ],
   providers: [
-    HomeService,
-    DomService
+    HomeService
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [ MainComponent ]
