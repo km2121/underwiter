@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   ngOnInit() {
     this.usersMenuData = [];
     this.users = [];
-    this.loadComponentMetadata().add(this.loadUserData().add(this.initMenu().add(this.loadParticipantType())));
+    this.loadData();
   }
 
   ngAfterViewChecked() {
@@ -40,6 +40,13 @@ export class HomeComponent implements OnInit, AfterViewChecked {
       this.activeElement(this.menuItems[0].children[0]);
       this.firstInit = false;
     }
+  }
+
+  loadData() {
+    this.loadComponentMetadata();
+    this.loadParticipantType();
+    this.loadUserData();
+    this.initMenu();
   }
 
   /**
