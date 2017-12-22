@@ -25,7 +25,7 @@ export class HomeService {
         return this.http.get<FieldMetadata[]>(this.dataUrl + '/field-metadata.json');
     }
 
-    saveUserData(users: User[]) {
-        console.log(users);
+    saveUserData(user: User) {
+        console.log(user);
     }
 }

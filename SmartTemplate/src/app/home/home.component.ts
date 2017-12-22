@@ -2,6 +2,8 @@ import { Component, OnInit, Renderer, HostListener, AfterViewChecked } from '@an
 import { HomeService } from './home.service';
 import { User, Menu, FieldMetadata } from '../shared';
 
+const DATEPICKER = 'datepicker';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -42,6 +44,9 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     }
   }
 
+  /**
+   * Initialize data
+   */
   loadData() {
     this.loadComponentMetadata();
     this.loadParticipantType();
@@ -78,11 +83,15 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     return this.homeService.getUsers().subscribe((data: User[]) => {
       this.users = data;
       this.selectedUser = data[0];
+      this.mapDataToView(this.selectedUser);
     }, (error) => {
       // handle error
     });
   }
 
+  /**
+   * Initialize left menu
+   */
   initMenu() {
     return this.homeService.getMenus().subscribe((data) => {
       this.usersMenuData = data;
@@ -92,6 +101,10 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     });
   }
 
+  /**
+   * Get Menu from User
+   * @param user User
+   */
   getMenuByUser(user: User) {
     for (let i = 0; i < this.usersMenuData.length; i++) {
       if (user.loanParticpantId === this.usersMenuData[i].loanParticpantId) {
@@ -101,6 +114,10 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     return null;
   }
 
+  /**
+   * Return menu name
+   * @param menuId id of menu
+   */
   getMenuNameById(menuId: string) {
     for (let i = 0; i < this.selectedUserMenu.data.length; i++) {
       if (menuId === this.selectedUserMenu.data[i].menuId) {
@@ -109,6 +126,10 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     }
   }
 
+  /**
+   * Return metadata for field such as dropdown, radio group
+   * @param fieldId id of field
+   */
   getMetadataForField(fieldId: number) {
     for (let i = 0; i < this.fieldMetadata.length; i++) {
       if (fieldId === this.fieldMetadata[i].fieldId) {
@@ -119,12 +140,13 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   }
 
   /**
-   * This function change old selected user to new selected user
+   * This function save data of old user and change old selected user to new selected user
    */
   changeUser(userId: number) {
+    this.saveData();
     this.selectedUser = this.getUserByUserId(userId);
+    this.mapDataToView(this.selectedUser);
     this.selectedUserMenu = this.getMenuByUser(this.selectedUser);
-    // this.mapperDataToView(this.selectedUser);
   }
 
   /**
@@ -229,10 +251,23 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   }
 
   /**
-   * This function calculate complete percent of required fields
+   * This function calculate completed percent of required field
    * @param user user want to calculate complete percent
    */
-  calcTotalRequireField(user: User) {
+  calcCompletedRequiredPercent(user: User) {
+    let requiredFields = 0;
+    let completedRequiredFields = 0;
+    for (let i = 0; i < user.data.length; i++) {
+      for (let j = 0; j < user.data[i].fields.length; j++) {
+        if (user.data[i].fields[j].required === true) {
+          requiredFields++;
+          if (user.data[i].fields[j].fieldValue !== null && user.data[i].fields[j].fieldValue.length > 0) {
+            completedRequiredFields++;
+          }
+        }
+      }
+    }
+    return Math.floor(completedRequiredFields / requiredFields * 100) + '%';
   }
 
   /**
@@ -270,8 +305,29 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     return null;
   }
 
+  mapDataToView(user: User) {
+    for (let i = 0; i < user.data.length; i++) {
+      for (let j = 0; j < user.data[i].fields.length; j++) {
+        if (user.data[i].fields[j].controlType === DATEPICKER) {
+          user.data[i].fields[j].fieldValue = new Date(user.data[i].fields[j].fieldValue);
+        }
+      }
+    }
+  }
+
+  mapDataToSave(user: User) {
+    for (let i = 0; i < user.data.length; i++) {
+      for (let j = 0; j < user.data[i].fields.length; j++) {
+        if (user.data[i].fields[j].controlType === DATEPICKER) {
+          user.data[i].fields[j].fieldValue = new Date(user.data[i].fields[j].fieldValue).toLocaleDateString();
+        }
+      }
+    }
+  }
+
   saveData() {
-    return this.homeService.saveUserData(this.users);
+    // this.mapDataToSave(this.selectedUser);
+    return this.homeService.saveUserData(this.selectedUser);
   }
 
 }

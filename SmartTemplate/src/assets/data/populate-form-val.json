@@ -572,8 +572,8 @@
 					{
 						"fieldId": "4",
 						"fieldName": "Date of birth",
-						"fieldValue": "1990/05/15",
-						"controlType": "textBox",
+						"fieldValue": "1992/8/25",
+						"controlType": "datepicker",
 						"maxLength": "20",
 						"enable": true,
 						"show": true,

@@ -73,3 +73,13 @@
     background-color: #2d5268;
     color: #ffffff;
 }
+
+.action-content {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 10;
+    border-top: 2px solid orange;
+    background-color: #ffffff;
+}

@@ -22,8 +22,10 @@
                         <div class="info-container" id="{{menu.menuId}}" fxLayout="column">
                             <span class="info-title">{{getMenuNameById(menu.menuId)}} INFORMATION</span>
                             <div class="info-content" fxLayout="column" *ngFor="let field of menu.fields">
-                                <app-custom-material [type]="field.controlType" [model]="field.fieldValue" [isDisable]="!field.enable" [isRequire]="true"
+                                <form #appForm="ngForm">
+                                    <app-custom-material name="abc" [(ngModel)]="field.fieldValue" [type]="field.controlType" [isDisable]="!field.enable" [isRequire]="true"
                                     [placeholder]="field.fieldName" [metadata]="getMetadataForField(field.fieldId)"></app-custom-material>
+                                </form>
                             </div>
                         </div>
                         <div class="end-container"></div>
@@ -50,5 +52,9 @@
                 <h6>{{getUserRole(user.participantTypeId)}}</h6>
             </div>
         </div>
+    </div>
+    <div class="action-content" fxLayout="row" fxLayoutAlign="center center">
+        <button class="mr-2" mat-raised-button color="primary" (click)="saveData()">Save</button>
+        <button class="ml-2" mat-raised-button>Reset</button>
     </div>
 </div>
