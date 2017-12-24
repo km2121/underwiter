@@ -76,19 +76,5 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
         }
     }
 
-    onBlur() {
-        this.onTouchedCallback();
-    }
 
-    writeValue(value: any): void {
-        if (value !== this.innerValue) {
-            this.innerValue = value;
-        }
-    }
-    registerOnChange(fn: any): void {
-        this.onChangeCallback = fn;
-    }
-    registerOnTouched(fn: any): void {
-        this.onTouchedCallback = fn;
-    }
 }

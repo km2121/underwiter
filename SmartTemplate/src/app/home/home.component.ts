@@ -149,36 +149,6 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     this.selectedUserMenu = this.getMenuByUser(this.selectedUser);
   }
 
-  /**
-   * This function handle event click to menu if the left
-   * @param section id of section want to go to
-   * @param event target event (click)
-   */
-  goToSection(section: string, event: any) {
-    document.querySelector('#' + section).scrollIntoView();
-    this.activeElement(event.target.parentElement);
-    this.isScrollByClick = true;
-  }
-
-  /**
-   *  This function handle scroll to setion will highlight menu in the left
-   */
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    if (this.isScrollByClick === true) {
-      this.isScrollByClick = false;
-      return;
-    }
-    for (let i = 0; i < this.selectedUserMenu.data.length; i++) {
-      if (document.querySelector('#' + this.selectedUserMenu.data[i].menuId) &&
-        document.querySelector('#' + this.selectedUserMenu.data[i].menuId).getBoundingClientRect().top <= 0) {
-        this.activeElement(this.menuItems[i].children[0]);
-      }
-    }
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      this.activeElement(this.menuItems[this.menuItems.length - 2].children[0]);
-    }
-  }
 
   /**
    * This function unactive actived menu and active selected menu in the left
