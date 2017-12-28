@@ -35,6 +35,7 @@ export interface MenuData {
 
 export interface FieldMetadata {
     fieldId?: number;
+    loanParticpantId?: number;
     metadata?: Metadata[];
 }
 

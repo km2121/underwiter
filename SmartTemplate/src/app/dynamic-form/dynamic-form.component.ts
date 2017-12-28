@@ -1,15 +1,15 @@
 import { Component, OnInit, Renderer, HostListener, AfterViewChecked } from '@angular/core';
-import { HomeService } from './home.service';
-import { User, Menu, FieldMetadata } from '../shared';
+import { HomeService } from './service/dynamic-form.service';
+import { User, Menu, FieldMetadata } from './model';
 
 const DATEPICKER = 'datepicker';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-dynamic-form',
+  templateUrl: './dynamic-form.component.html',
+  styleUrls: ['./dynamic-form.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewChecked {
+export class DynamicFormComponent implements OnInit, AfterViewChecked {
   roles: any;
   selectedRole: any;
   citizenshipStatus: object[];
@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
   ) { }
 
   ngOnInit() {
+    // init data
     this.usersMenuData = [];
     this.users = [];
     this.loadData();
@@ -132,7 +133,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
    */
   getMetadataForField(fieldId: number) {
     for (let i = 0; i < this.fieldMetadata.length; i++) {
-      if (fieldId === this.fieldMetadata[i].fieldId) {
+      if (this.selectedUser.loanParticpantId === this.fieldMetadata[i].loanParticpantId && fieldId === this.fieldMetadata[i].fieldId) {
         return this.fieldMetadata[i].metadata;
       }
     }
@@ -191,6 +192,9 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     this.renderer.setElementClass(element, 'active-menu', true);
   }
 
+  /**
+   * Scroll page to top
+   */
   backToTop() {
     window.scrollTo(0, 0);
     this.activeElement(this.menuItems[0]);
@@ -308,6 +312,10 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     return null;
   }
 
+  /**
+   * The datepicker field [(ngModel)] must be a Date object. This function change type of fieldValue of datepicker from string to Date
+   * @param user user want to map data
+   */
   mapDataToView(user: User) {
     for (let i = 0; i < user.data.length; i++) {
       for (let j = 0; j < user.data[i].fields.length; j++) {
@@ -318,6 +326,10 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     }
   }
 
+  /**
+   * When save data to db. Must to change type of fieldValue to string
+   * @param user user want to map data
+   */
   mapDataToSave(user: User) {
     for (let i = 0; i < user.data.length; i++) {
       for (let j = 0; j < user.data[i].fields.length; j++) {
@@ -328,9 +340,19 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     }
   }
 
+  /**
+   * Save user when select another user or click Save button
+   */
   saveData() {
-    // this.mapDataToSave(this.selectedUser);
+    this.mapDataToSave(this.selectedUser);
     return this.homeService.saveUserData(this.selectedUser);
+  }
+
+  /**
+   * This function control show/hide button scroll top in the bottom-right page
+   */
+  showScrolTop() {
+    return window.scrollY > 60;
   }
 
 }

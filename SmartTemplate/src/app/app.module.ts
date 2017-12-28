@@ -14,8 +14,8 @@ import {
 } from './layout';
 
 import { AdminComponent } from './admin/admin.component';
-import { HomeComponent } from './home/home.component';
-import { HomeService } from './home/home.service';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { HomeService } from './dynamic-form/service/dynamic-form.service';
 
 import { ScrollSpyDirective } from './layout/directives';
 
@@ -35,7 +35,7 @@ import { APP_ROUTE } from './app-routing.module';
     FooterComponent,
     NavbarComponent,
     MainComponent,
-    HomeComponent,
+    DynamicFormComponent,
     AdminComponent,
     ScrollSpyDirective,
     CustomMaterialComponent

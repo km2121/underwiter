@@ -17,9 +17,11 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
     providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
 
+/**
+ * This component will render an Angular Material component base on attribute "type" from @Input decorator
+ */
 export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
     @Input() type: string;
-    // @Input() model: any;
     @Input() isDisable: boolean;
     @Input() isRequire: boolean;
     @Input() placeholder: string;
@@ -37,6 +39,7 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
     }
 
     ngOnInit() {
+        // Check type and select component type to render
         switch (this.type) {
             case ComponentConstant.INPUT: {
                 this.isInput = true;
@@ -65,16 +68,24 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
         }
     }
 
+    /**
+     * Getter data
+     */
     get value(): any {
         return this.innerValue;
     }
 
+    /**
+     * Setter data
+     */
     set value(v: any) {
         if (v !== this.innerValue) {
             this.innerValue = v;
             this.onChangeCallback(v);
         }
     }
+
+    // These functions bellow control passing data of ngModel directive
 
     onBlur() {
         this.onTouchedCallback();

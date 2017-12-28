@@ -1,7 +1,7 @@
 [
     {
-        "fieldId": "15",
-        "loanParticpantId": 5,
+        "fieldId": 15,
+        "loanParticpantId": 1,
         "metadata": [
             {
                 "key": "NJ",
@@ -22,8 +22,8 @@
         ]
     },
     {
-        "fieldId": "7",
-        "loanParticpantId": 5,
+        "fieldId": 7,
+        "loanParticpantId": 1,
         "metadata": [
             {
                 "key": "US",
@@ -44,8 +44,8 @@
         ]
     },
     {
-        "fieldId": "8",
-        "loanParticpantId": 5,
+        "fieldId": 8,
+        "loanParticpantId": 1,
         "metadata": [
             {
                 "key": "US",
@@ -62,6 +62,166 @@
             {
                 "key": "VM",
                 "value": "Vietnam"
+            }
+        ]
+    },
+    {
+        "fieldId": 44,
+        "loanParticpantId": 1,
+        "metadata": [
+            {
+                "key": "chk",
+                "value": "Checking"
+            },
+            {
+                "key": "sav",
+                "value": "Saving"
+            },
+            {
+                "key": "mmkt",
+                "value": "Money Market"
+            },
+            {
+                "key": "ira",
+                "value": "Retirement"
+            }
+        ]
+    },
+    {
+        "loanParticpantId": 2,
+        "fieldId": 44,
+        "metadata": [
+            {
+                "key": "chk",
+                "value": "Checking"
+            },
+            {
+                "key": "sav",
+                "value": "Saving"
+            },
+            {
+                "key": "mmkt",
+                "value": "Money Market"
+            },
+            {
+                "key": "ira",
+                "value": "Retirement"
+            }
+        ]
+    },
+    {
+        "loanParticpantId": 1,
+        "fieldId": 40,
+        "metadata": [
+            {
+                "key": "0",
+                "value": "Yes"
+            },
+            {
+                "key": "1",
+                "value": "No"
+            }
+        ]
+    },
+    {
+        "loanParticpantId": 1,
+        "fieldId": 39,
+        "metadata": [
+            {
+                "key": "1",
+                "value": "Close Associate"
+            },
+            {
+                "key": "2",
+                "value": "Family Member"
+            },
+            {
+                "key": "3",
+                "value": "Senior Political Official"
+            }
+        ]
+    },
+    {
+        "loanParticpantId": 1,
+        "fieldId": 41,
+        "metadata": [
+            {
+                "key": "yes",
+                "value": "Yes"
+            },
+            {
+                "key": "no",
+                "value": "No"
+            },
+            {
+                "key": "maybe",
+                "value": "Maybe"
+            },
+            {
+                "key": "other",
+                "value": "Others"
+            }
+        ]
+    },
+    {
+        "loanParticpantId": 1,
+        "fieldId": 30,
+        "metadata": [
+            {
+                "key": "ft",
+                "value": "Full Time"
+            },
+            {
+                "key": "pt",
+                "value": "Part Time"
+            },
+            {
+                "key": "ct",
+                "value": "Contract"
+            },
+            {
+                "key": "rt",
+                "value": "Retired"
+            }
+        ]
+    },
+    {
+        "loanParticpantId": 2,
+        "fieldId": 30,
+        "metadata": [
+            {
+                "key": "ft",
+                "value": "Full Time"
+            },
+            {
+                "key": "pt",
+                "value": "Part Time"
+            },
+            {
+                "key": "ct",
+                "value": "Contract"
+            },
+            {
+                "key": "rt",
+                "value": "Retired"
+            }
+        ]
+    },
+    {
+        "loanParticpantId": 2,
+        "fieldId": 39,
+        "metadata": [
+            {
+                "key": "1",
+                "value": "Close Associate"
+            },
+            {
+                "key": "2",
+                "value": "Family Member"
+            },
+            {
+                "key": "3",
+                "value": "Senior Political Official"
             }
         ]
     }

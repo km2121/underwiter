@@ -23,7 +23,8 @@
     border-radius: 5px;
 
     .nav-item {
-        border-bottom: 1px solid rgba(0,0,0,.125);;
+        border-bottom: 1px solid rgba(0,0,0,.125);
+        text-transform: uppercase;
     }
 }
 
@@ -41,6 +42,7 @@
 }
 
 .info-title {
+    text-transform: uppercase;
     padding: 10px;
     background-color: #e1e1ea;
     font-weight: bold;
@@ -82,4 +84,13 @@
     z-index: 10;
     border-top: 2px solid orange;
     background-color: #ffffff;
+}
+
+.scroll-top {
+    position: fixed;
+    background: url("../../assets/images/up-to-top.png") no-repeat;
+    width: 98px;
+    height: 98px;
+    bottom: 70px;
+    right: 110px;
 }

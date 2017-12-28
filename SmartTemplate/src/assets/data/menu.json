@@ -1,36 +1,36 @@
 [
 	{
-		"loanParticpantId": 5,
+		"loanParticpantId": 1,
 		"participantTypeId": 1,
 		"data": [
 			{
 				"menuId": "general",
-				"menuName": "GENERAL",
+				"menuName": "General",
 				"show": true
 			},
 			{
 				"menuId": "address",
-				"menuName": "ADDRESS",
+				"menuName": "Address",
 				"show": true
 			},
 			{
 				"menuId": "contact",
-				"menuName": "CONTACT",
+				"menuName": "Contact",
 				"show": true
 			},
 			{
 				"menuId": "employment",
-				"menuName": "EMPLOYMENT",
+				"menuName": "Employment",
 				"show": true
 			},
 			{
 				"menuId": "financial",
-				"menuName": "FINANCIAL",
+				"menuName": "Financial",
 				"show": true
 			},
 			{
 				"menuId": "legal",
-				"menuName": "LEGAL",
+				"menuName": "Legal",
 				"show": true
 			}
 		]
@@ -41,27 +41,27 @@
 		"data": [
 			{
 				"menuId": "general",
-				"menuName": "GENERAL",
+				"menuName": "General",
 				"show": true
 			},
 			{
 				"menuId": "address",
-				"menuName": "ADDRESS",
+				"menuName": "Address",
 				"show": true
 			},
 			{
 				"menuId": "contact",
-				"menuName": "CONTACT",
+				"menuName": "Contact",
 				"show": true
 			},
 			{
 				"menuId": "employment",
-				"menuName": "EMPLOYMENT",
+				"menuName": "Employment",
 				"show": true
 			},
 			{
 				"menuId": "financial",
-				"menuName": "FINANCIAL",
+				"menuName": "Financial",
 				"show": true
 			}
 		]

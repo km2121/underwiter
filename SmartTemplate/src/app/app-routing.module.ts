@@ -1,12 +1,12 @@
 import { Route } from '@angular/router';
 
 import { AdminComponent } from './admin/admin.component';
-import { HomeComponent } from './home/home.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 export const APP_ROUTE: Route[] = [
     {
         path: '',
-        component: HomeComponent,
+        component: DynamicFormComponent,
         data: {
             authorities: [],
             pageTitle: 'home.title'
