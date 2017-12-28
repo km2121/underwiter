@@ -267,6 +267,9 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         }
       }
     }
+    if (requiredFields === 0) {
+      return '0%';
+    }
     return Math.floor(completedRequiredFields / requiredFields * 100) + '%';
   }
 

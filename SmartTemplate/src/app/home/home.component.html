@@ -44,8 +44,8 @@
         <div fxLayout="column">
             <div class="user-content mb-3" *ngFor="let user of users" (click)="changeUser(user.loanParticpantId)" [ngClass]="{'user-content-active': user.loanParticpantId === selectedUser.loanParticpantId}">
                 <div class="progress mb-2">
-                    <div class="progress-bar progress-bar-success" role="progressbar" [ngStyle]="{'width': calcCompletePercent(user)}">
-                        {{calcCompletePercent(user)}} Complete
+                    <div class="progress-bar progress-bar-success" role="progressbar" [ngStyle]="{'width': calcCompletedRequiredPercent(user)}">
+                        {{calcCompletedRequiredPercent(user)}} Complete
                     </div>
                 </div>
                 <h4><i class="fa fa-user-circle fa-1x mr-2"></i>{{getUserName(user)}}</h4>
