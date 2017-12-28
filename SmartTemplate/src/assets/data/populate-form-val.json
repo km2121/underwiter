@@ -71,7 +71,7 @@
 						"fieldName": "Citizenship Status",
 						"controlType": "dropdownBox",
 						"maxLength": "",
-						"fieldValue": 1,
+						"fieldValue": "UK",
 						"enable": true,
 						"show": true,
 						"required": false
@@ -82,8 +82,8 @@
 						"controlType": "multiSelectBox",
 						"maxLength": "",
 						"fieldValue": [
-							"NY",
-							"NJ"
+							"UK",
+							"US"
 						],
 						"enable": true,
 						"show": true,
@@ -199,7 +199,7 @@
 					{
 						"fieldId": "19",
 						"fieldName": "Mailing address same as Residential address?",
-						"fieldValue": 0,
+						"fieldValue": "",
 						"controlType": "textBox",
 						"maxLength": "50",
 						"enable": true,
@@ -242,7 +242,7 @@
 						"fieldValue": [
 							"NJ"
 						],
-						"controlType": "comboBox",
+						"controlType": "dropdownBox",
 						"maxLength": "",
 						"enable": true,
 						"show": true,
@@ -321,8 +321,10 @@
 					{
 						"fieldId": "30",
 						"fieldName": "employment Status",
-						"fieldValue": 1,
-						"controlType": "comboBox",
+						"fieldValue": [
+							"ft"
+						],
+						"controlType": "dropdownBox",
 						"maxLength": "",
 						"enable": true,
 						"show": true,
@@ -391,8 +393,10 @@
 					{
 						"fieldId": "37",
 						"fieldName": "State",
-						"fieldValue": 1,
-						"controlType": "comboBox",
+						"fieldValue": [
+							"NJ"
+						],
+						"controlType": "dropdownBox",
 						"maxLength": "",
 						"enable": true,
 						"show": true,
@@ -404,6 +408,42 @@
 						"fieldValue": "",
 						"controlType": "textBox",
 						"maxLength": "10",
+						"enable": true,
+						"show": true,
+						"required": false
+					},
+					{
+						"fieldId": "39",
+						"fieldName": "Are you a current or Senior Political Official or a Family Member or close associate of one?",
+						"fieldValue": [
+							"1"
+						],
+						"controlType": "radioBox",
+						"maxLength": "",
+						"enable": true,
+						"show": true,
+						"required": false
+					},
+					{
+						"fieldId": "40",
+						"fieldName": "Do you have an activeaccount with USBank?",
+						"fieldValue": [
+							"0"
+						],
+						"controlType": "radioBox",
+						"maxLength": "",
+						"enable": true,
+						"show": true,
+						"required": false
+					},
+										{
+						"fieldId": "41",
+						"fieldName": "Have you ever gone through bankruptcy or had a judgement against you?",
+						"fieldValue": [
+							"yes","maybe"
+						],
+						"controlType": "checkBox",
+						"maxLength": "",
 						"enable": true,
 						"show": true,
 						"required": false
@@ -466,8 +506,11 @@
 					{
 						"fieldId": "44",
 						"fieldName": "Account Type",
-						"fieldValue": 1,
-						"controlType": "comboBox",
+						"fieldValue": [
+							"chk",
+							"sav"
+						],
+						"controlType": "multiselectBox",
 						"maxLength": "",
 						"enable": true,
 						"show": true,
@@ -572,8 +615,8 @@
 					{
 						"fieldId": "4",
 						"fieldName": "Date of birth",
-						"fieldValue": "1992/8/25",
-						"controlType": "datepicker",
+						"fieldValue": "1990/05/15",
+						"controlType": "textBox",
 						"maxLength": "20",
 						"enable": true,
 						"show": true,
@@ -604,7 +647,7 @@
 						"fieldName": "Citizenship Status",
 						"controlType": "dropdownBox",
 						"maxLength": "",
-						"fieldValue": 1,
+						"fieldValue":"US",
 						"enable": true,
 						"show": true,
 						"required": false
@@ -615,8 +658,8 @@
 						"controlType": "multiSelectBox",
 						"maxLength": "",
 						"fieldValue": [
-							"NY",
-							"NJ"
+							"US",
+							"CA"
 						],
 						"enable": true,
 						"show": true,
@@ -772,8 +815,8 @@
 					{
 						"fieldId": "23",
 						"fieldName": "Mailing State",
-						"fieldValue": 2,
-						"controlType": "comboBox",
+						"fieldValue": "NJ",
+						"controlType": "dropdownBox",
 						"maxLength": "",
 						"enable": true,
 						"show": true,
@@ -852,8 +895,8 @@
 					{
 						"fieldId": "30",
 						"fieldName": "employment Status",
-						"fieldValue": 1,
-						"controlType": "comboBox",
+						"fieldValue": "ft",
+						"controlType": "dropdownBox",
 						"maxLength": "",
 						"enable": true,
 						"show": true,
@@ -923,7 +966,7 @@
 						"fieldId": "37",
 						"fieldName": "State",
 						"fieldValue": 1,
-						"controlType": "comboBox",
+						"controlType": "dropdownBox",
 						"maxLength": "",
 						"enable": true,
 						"show": true,
@@ -997,8 +1040,11 @@
 					{
 						"fieldId": "44",
 						"fieldName": "Account Type",
-						"fieldValue": 1,
-						"controlType": "comboBox",
+						"fieldValue": [
+							"chk",
+							"sav"
+						],
+						"controlType": "multiselectBox",
 						"maxLength": "",
 						"enable": true,
 						"show": true,
