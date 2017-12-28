@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-
+import { ComponentConstant } from '../../shared';
 
 const noop = () => {
 };
@@ -38,27 +38,27 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
 
     ngOnInit() {
         switch (this.type) {
-            case 'textBox': {
+            case ComponentConstant.INPUT: {
                 this.isInput = true;
                 break;
             }
-            case 'datepicker': {
+            case ComponentConstant.DATEPICKER: {
                 this.isDatepicker = true;
                 break;
             }
-            case 'dropdownBox': {
+            case ComponentConstant.DROPDOWN: {
                 this.isDropdown = true;
                 break;
             }
-            case 'multiSelectBox': {
+            case ComponentConstant.MULTI_SELECT_DROPDOWN: {
                 this.isDropdownMultiple = true;
                 break;
             }
-            case 'radioBox': {
+            case ComponentConstant.RADIO_GROUP: {
                 this.isRadioGroup = true;
                 break;
             }
-            case 'textarea': {
+            case ComponentConstant.TEXT_AREA: {
                 this.isTextArea = true;
                 break;
             }
