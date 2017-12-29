@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User, Menu, FieldMetadata} from '../model';
 
 @Injectable()
-export class HomeService {
+export class DynamicFormService {
     private dataUrl = '/assets/data';
     constructor(
         private http: HttpClient

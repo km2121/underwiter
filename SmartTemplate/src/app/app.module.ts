@@ -15,11 +15,12 @@ import {
 
 import { AdminComponent } from './admin/admin.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
-import { HomeService } from './dynamic-form/service/dynamic-form.service';
+import { DynamicFormService } from './service/dynamic-form.service';
 
 import { ScrollSpyDirective } from './layout/directives';
 
 import { APP_ROUTE } from './app-routing.module';
+import { ChangeRoleDialog } from './dynamic-form/change-role.dialog';
 
 
 @NgModule({
@@ -38,10 +39,14 @@ import { APP_ROUTE } from './app-routing.module';
     DynamicFormComponent,
     AdminComponent,
     ScrollSpyDirective,
-    CustomMaterialComponent
+    CustomMaterialComponent,
+    ChangeRoleDialog
+  ],
+  entryComponents: [
+    ChangeRoleDialog
   ],
   providers: [
-    HomeService
+    DynamicFormService
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [ MainComponent ]

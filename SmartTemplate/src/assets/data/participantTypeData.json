@@ -1,17 +1,22 @@
 [
-	{
+    {
         "participantTypeId": 1,
-        "participantTypeName": "Borrower"
+        "participantTypeName": "Borrower",
+        "participantName": "Sam Smith"
     },
     {
         "participantTypeId": 2,
-        "participantTypeName": "CoBorrower"
+        "participantTypeName": "CoBorrower",
+        "participantName": "Lenny Jones"
     },
     {
         "participantTypeId": 3,
-        "participantTypeName": "Trustee"
-    },{
+        "participantTypeName": "Trustee",
+        "participantName": "Bruce Wayne"
+    },
+    {
         "participantTypeId": 4,
-        "participantTypeName": "Pludge"
+        "participantTypeName": "Pludge",
+        "participantName": "Lex Luthor"
     }
 ]

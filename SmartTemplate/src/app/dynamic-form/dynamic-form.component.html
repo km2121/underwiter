@@ -11,20 +11,25 @@
             </mat-sidenav>
             <mat-sidenav-content class="main-content">
                 <div fxLayout="column" *ngIf="selectedUser && selectedUserMenu">
-                    <mat-form-field>
+                    <div class="role-content" fxLayout="row">
+                        <span class="user-role mr-4">{{getRoleNameById(selectedUser.participantTypeId)}}</span>
+                        <a (click)="openDialogChangeRole()">Edit</a>
+                    </div>
+                    <p class="under-role"></p>
+                    <!-- <mat-form-field>
                         <mat-select [(ngModel)]="selectedUser.participantTypeId" placeholder="Select Role">
                             <mat-option *ngFor="let role of roles" [value]="role.participantTypeId">
                                 {{ role.participantTypeName }}
                             </mat-option>
                         </mat-select>
-                    </mat-form-field>
+                    </mat-form-field> -->
                     <div *ngFor="let menu of selectedUser.data">
                         <div class="info-container" id="{{menu.menuId}}" fxLayout="column">
                             <span class="info-title">{{getMenuNameById(menu.menuId)}} INFORMATION</span>
                             <div class="info-content" fxLayout="column" *ngFor="let field of menu.fields">
                                 <form #appForm="ngForm">
                                     <app-custom-material name="abc" [(ngModel)]="field.fieldValue" [type]="field.controlType" [isDisable]="!field.enable" [isRequire]="true"
-                                    [placeholder]="field.fieldName" [metadata]="getMetadataForField(field.fieldId)"></app-custom-material>
+                                        [placeholder]="field.fieldName" [metadata]="getMetadataForField(field.fieldId)"></app-custom-material>
                                 </form>
                             </div>
                         </div>
@@ -48,7 +53,8 @@
                         {{calcCompletedRequiredPercent(user)}} Complete
                     </div>
                 </div>
-                <h4><i class="fa fa-user-circle fa-1x mr-2"></i>{{getUserName(user)}}</h4>
+                <h4>
+                    <i class="fa fa-user-circle fa-1x mr-2"></i>{{getUserName(user)}}</h4>
                 <h6>{{getUserRole(user.participantTypeId)}}</h6>
             </div>
         </div>

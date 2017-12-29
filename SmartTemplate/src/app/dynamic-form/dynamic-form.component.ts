@@ -1,6 +1,8 @@
 import { Component, OnInit, Renderer, HostListener, AfterViewChecked } from '@angular/core';
-import { HomeService } from './service/dynamic-form.service';
-import { User, Menu, FieldMetadata } from './model';
+import { DynamicFormService } from '../service/dynamic-form.service';
+import { User, Menu, FieldMetadata } from '../model';
+import { MatDialog } from '@angular/material';
+import { ChangeRoleDialog } from './change-role.dialog';
 
 const DATEPICKER = 'datepicker';
 
@@ -25,8 +27,9 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
   selectedUserMenu: Menu;
 
   constructor(
-    private homeService: HomeService,
-    private renderer: Renderer
+    private dynamicFormService: DynamicFormService,
+    private renderer: Renderer,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -59,7 +62,7 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    * This function load component data such as dropdown, group radion button
    */
   loadParticipantType() {
-    return this.homeService.getParticipantTypeData().subscribe((data) => {
+    return this.dynamicFormService.getParticipantTypeData().subscribe((data) => {
       this.roles = data;
     });
   }
@@ -68,7 +71,7 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    * This function load component properties for each component in view
    */
   loadComponentMetadata() {
-    return this.homeService.getMetadata().subscribe((data) => {
+    return this.dynamicFormService.getMetadata().subscribe((data) => {
       this.fieldMetadata = data;
       this.firstInit = true; // flag to check first time init of component, after this, do not run the code in ngAfterViewChecked
     }, (error) => {
@@ -81,7 +84,7 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    * Set selected user is fist user in list
    */
   loadUserData() {
-    return this.homeService.getUsers().subscribe((data: User[]) => {
+    return this.dynamicFormService.getUsers().subscribe((data: User[]) => {
       this.users = data;
       this.selectedUser = data[0];
       this.mapDataToView(this.selectedUser);
@@ -94,7 +97,7 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    * Initialize left menu
    */
   initMenu() {
-    return this.homeService.getMenus().subscribe((data) => {
+    return this.dynamicFormService.getMenus().subscribe((data) => {
       this.usersMenuData = data;
       this.selectedUserMenu = this.getMenuByUser(this.selectedUser);
     }, (error) => {
@@ -345,7 +348,7 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    */
   saveData() {
     this.mapDataToSave(this.selectedUser);
-    return this.homeService.saveUserData(this.selectedUser);
+    return this.dynamicFormService.saveUserData(this.selectedUser);
   }
 
   /**
@@ -353,6 +356,34 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    */
   showScrolTop() {
     return window.scrollY > 60;
+  }
+
+  getRoleNameById(participantTypeId: number): string {
+    for (let i = 0; i < this.roles.length; i++) {
+      if (participantTypeId === this.roles[i].participantTypeId) {
+        return this.roles[i].participantTypeName;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * This function open dialog and handle data after dialog close
+   */
+  openDialogChangeRole() {
+    const dialogRef = this.dialog.open(ChangeRoleDialog, {
+      width: '500px',
+      data: this.roles
+    });
+
+    dialogRef.afterClosed().subscribe((data) => {
+      if (data && data.length > 0) {
+        this.roles = data;
+        for (let i = 0; i < this.users.length; i++) {
+          this.users[i].participantTypeId = this.roles[i].participantTypeId;
+        }
+      }
+    });
   }
 
 }
