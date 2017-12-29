@@ -13,7 +13,7 @@
                 <div fxLayout="column" *ngIf="selectedUser && selectedUserMenu">
                     <div class="role-content" fxLayout="row">
                         <span class="user-role mr-4">{{getRoleNameById(selectedUser.participantTypeId)}}</span>
-                        <a (click)="openDialogChangeRole()">Edit</a>
+                        <a (click)="openDialogChangeRole()" href="javascript:void(0)">Edit</a>
                     </div>
                     <p class="under-role"></p>
                     <!-- <mat-form-field>
