@@ -157,9 +157,7 @@
 					{
 						"fieldId": 15,
 						"fieldName": "Residential State",
-						"fieldValue": [
-							"NJ"
-						],
+						"fieldValue": "NJ",
 						"controlType": "dropdownBox",
 						"maxLength": "",
 						"enable": true,
@@ -239,9 +237,7 @@
 					{
 						"fieldId": 23,
 						"fieldName": "Mailing State",
-						"fieldValue": [
-							"NJ"
-						],
+						"fieldValue": "NJ",
 						"controlType": "dropdownBox",
 						"maxLength": "",
 						"enable": true,
@@ -321,9 +317,7 @@
 					{
 						"fieldId": 30,
 						"fieldName": "employment Status",
-						"fieldValue": [
-							"ft"
-						],
+						"fieldValue": "ft",
 						"controlType": "dropdownBox",
 						"maxLength": "",
 						"enable": true,
@@ -393,9 +387,7 @@
 					{
 						"fieldId": 37,
 						"fieldName": "State",
-						"fieldValue": [
-							"NJ"
-						],
+						"fieldValue": "NJ",
 						"controlType": "dropdownBox",
 						"maxLength": "",
 						"enable": true,
@@ -733,9 +725,7 @@
 					{
 						"fieldId": 15,
 						"fieldName": "Residential State",
-						"fieldValue": [
-							"NJ"
-						],
+						"fieldValue": "NJ",
 						"controlType": "dropdownBox",
 						"maxLength": "",
 						"enable": true,

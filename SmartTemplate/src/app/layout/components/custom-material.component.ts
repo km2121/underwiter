@@ -109,18 +109,20 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
     }
 
     isChecked(data) {
-        for (let i = 0; i < this.value.length; i++) {
-            if (this.value[i] === data.key) {
-                return true;
+        if (this.isCheckBox && this.value !== null && this.value.length > 0) {
+            for (let i = 0; i < this.value.length; i++) {
+                if (this.value[i] === data.key) {
+                    return true;
+                }
             }
+            return false;
         }
-        return false;
     }
 
     changeChecked(data) {
         for (let i = 0; i < this.value.length; i++) {
             if (this.value[i] === data.key) {
-                this.value.splice(this.value[i], 1);
+                this.value.splice(i, 1);
                 return;
             }
         }
