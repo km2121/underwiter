@@ -268,8 +268,12 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
       for (let j = 0; j < user.data[i].fields.length; j++) {
         if (user.data[i].fields[j].required === true) {
           requiredFields++;
-          if (user.data[i].fields[j].fieldValue !== null && user.data[i].fields[j].fieldValue.length > 0) {
-            completedRequiredFields++;
+          if (user.data[i].fields[j].fieldValue !== null) {
+            if (user.data[i].fields[j].controlType !== DATEPICKER && user.data[i].fields[j].fieldValue.length > 0) {
+              completedRequiredFields++;
+            } else if (user.data[i].fields[j].controlType === DATEPICKER && new Date(user.data[i].fields[j].fieldValue).getTime()) {
+              completedRequiredFields++;
+            }
           }
         }
       }

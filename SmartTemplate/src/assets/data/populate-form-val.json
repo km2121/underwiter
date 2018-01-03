@@ -14,7 +14,7 @@
 						"maxLength": "50",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required": true
 					},
 					{
 						"fieldId": 2,
@@ -24,7 +24,7 @@
 						"maxLength": "50",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required": true
 					},
 					{
 						"fieldId": 3,
@@ -34,7 +34,7 @@
 						"maxLength": "50",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required": true
 					},
 					{
 						"fieldId": 4,
@@ -44,7 +44,7 @@
 						"maxLength": "20",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required": true
 					},
 					{
 						"fieldId": 5,
@@ -54,7 +54,7 @@
 						"maxLength": "20",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required": true
 					},
 					{
 						"fieldId": 6,
@@ -71,7 +71,7 @@
 						"fieldName": "Citizenship Status",
 						"controlType": "dropdownBox",
 						"maxLength": "",
-						"fieldValue": "UK",
+						"fieldValue": "US",
 						"enable": true,
 						"show": true,
 						"required": false
@@ -271,7 +271,7 @@
 						"maxLength": "15",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required": true
 					},
 					{
 						"fieldId": 26,
@@ -281,7 +281,7 @@
 						"maxLength": "15",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required":true
 					},
 					{
 						"fieldId": 27,
@@ -291,7 +291,7 @@
 						"maxLength": "15",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required": true
 					},
 					{
 						"fieldId": 28,
@@ -301,7 +301,7 @@
 						"maxLength": "35",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required": true
 					},
 					{
 						"fieldId": 29,
@@ -311,7 +311,7 @@
 						"maxLength": "35",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required": true
 					}
 				]
 			},
@@ -436,7 +436,7 @@
 						"show": true,
 						"required": false
 					},
-										{
+					{
 						"fieldId": 41,
 						"fieldName": "Have you ever gone through bankruptcy or had a judgement against you?",
 						"fieldValue": [
@@ -454,7 +454,7 @@
 				"menuId": "financial",
 				"fields": [
 					{
-						"fieldId": 39,
+						"fieldId": 42,
 						"fieldName": "Annual Income",
 						"fieldValue": "",
 						"controlType": "textBox",
@@ -464,7 +464,7 @@
 						"required": false
 					},
 					{
-						"fieldId": 40,
+						"fieldId": 43,
 						"fieldName": "Net Worth",
 						"fieldValue": "",
 						"controlType": "textBox",
@@ -474,7 +474,7 @@
 						"required": false
 					},
 					{
-						"fieldId": 41,
+						"fieldId": 44,
 						"fieldName": "Total Assets",
 						"fieldValue": "",
 						"controlType": "textBox",
@@ -484,7 +484,7 @@
 						"required": false
 					},
 					{
-						"fieldId": 42,
+						"fieldId": 45,
 						"fieldName": "Source Of Income",
 						"fieldValue": "",
 						"controlType": "textBox",
@@ -494,7 +494,7 @@
 						"required": false
 					},
 					{
-						"fieldId": 43,
+						"fieldId": 46,
 						"fieldName": "Source Of Wealth",
 						"fieldValue": "",
 						"controlType": "textBox",
@@ -504,7 +504,7 @@
 						"required": false
 					},
 					{
-						"fieldId": 44,
+						"fieldId": 47,
 						"fieldName": "Account Type",
 						"fieldValue": [
 							"chk",
@@ -517,7 +517,7 @@
 						"required": false
 					},
 					{
-						"fieldId": 45,
+						"fieldId": 48,
 						"fieldName": "Account Number",
 						"fieldValue": "",
 						"controlType": "textBox",
@@ -532,7 +532,7 @@
 				"menuId": "legal",
 				"fields": [
 					{
-						"fieldId": 46,
+						"fieldId": 49,
 						"fieldName": "Are you a current or Senior Political Official or a Family Member or close associate of one?",
 						"fieldValue": 1,
 						"controlType": "radioBox",
@@ -542,7 +542,7 @@
 						"required": false
 					},
 					{
-						"fieldId": 47,
+						"fieldId": 50,
 						"fieldName": "Are you a defendant in any suit or legal action?",
 						"fieldValue": 1,
 						"controlType": "radioBox",
@@ -552,7 +552,7 @@
 						"required": false
 					},
 					{
-						"fieldId": 48,
+						"fieldId": 51,
 						"fieldName": "Have you ever gone through bankruptcy or had a judgement against you?",
 						"fieldValue": 1,
 						"controlType": "radioBox",
@@ -562,7 +562,7 @@
 						"required": false
 					},
 					{
-						"fieldId": 49,
+						"fieldId": 52,
 						"fieldName": "If you answered yes to any of these questions, please supply the details",
 						"fieldValue": "",
 						"controlType": "textarea",
@@ -590,7 +590,7 @@
 						"maxLength": "50",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required": true
 					},
 					{
 						"fieldId": 2,
@@ -600,7 +600,7 @@
 						"maxLength": "50",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required": true
 					},
 					{
 						"fieldId": 3,
@@ -610,7 +610,7 @@
 						"maxLength": "50",
 						"enable": true,
 						"show": true,
-						"required": false
+						"required": true
 					},
 					{
 						"fieldId": 4,

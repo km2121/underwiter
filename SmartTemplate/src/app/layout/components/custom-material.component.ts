@@ -32,6 +32,7 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
     isDatepicker: boolean;
     isRadioGroup: boolean;
     isTextArea: boolean;
+    isCheckBox: boolean;
     private onTouchedCallback: () => void = noop;
     private onChangeCallback: (_: any) => void = noop;
     private innerValue: any = null;
@@ -63,6 +64,10 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
             }
             case ComponentConstant.TEXT_AREA: {
                 this.isTextArea = true;
+                break;
+            }
+            case ComponentConstant.CHECK_BOX: {
+                this.isCheckBox = true;
                 break;
             }
         }
@@ -101,5 +106,24 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
     }
     registerOnTouched(fn: any): void {
         this.onTouchedCallback = fn;
+    }
+
+    isChecked(data) {
+        for (let i = 0; i < this.value.length; i++) {
+            if (this.value[i] === data.key) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    changeChecked(data) {
+        for (let i = 0; i < this.value.length; i++) {
+            if (this.value[i] === data.key) {
+                this.value.splice(this.value[i], 1);
+                return;
+            }
+        }
+        this.value.push(data.key);
     }
 }

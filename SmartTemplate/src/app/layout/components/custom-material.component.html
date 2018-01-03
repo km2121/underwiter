@@ -29,3 +29,9 @@
 <mat-form-field *ngIf="isTextArea" fxFill>
     <textarea [(ngModel)]="value" [disabled]="isDisable" required="isRequire" matInput placeholder="{{placeholder}}"></textarea>
 </mat-form-field>
+<div *ngIf="isCheckBox" fxLayout="column">
+        <span class="placeholder-text">{{placeholder}}</span>
+    <mat-checkbox *ngFor="let data of metadata" [checked]="isChecked(data)" (change)="changeChecked(data)">
+        {{data.value}}
+    </mat-checkbox>
+</div>

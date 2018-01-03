@@ -28,7 +28,7 @@
                             <span class="info-title">{{getMenuNameById(menu.menuId)}} INFORMATION</span>
                             <div class="info-content" fxLayout="column" *ngFor="let field of menu.fields">
                                 <form #appForm="ngForm">
-                                    <app-custom-material name="abc" [(ngModel)]="field.fieldValue" [type]="field.controlType" [isDisable]="!field.enable" [isRequire]="true"
+                                    <app-custom-material name="custom-field" [(ngModel)]="field.fieldValue" [type]="field.controlType" [isDisable]="!field.enable" [isRequire]="true"
                                         [placeholder]="field.fieldName" [metadata]="getMetadataForField(field.fieldId)"></app-custom-material>
                                 </form>
                             </div>
