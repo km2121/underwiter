@@ -127,5 +127,10 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
             }
         }
         this.value.push(data.key);
+        console.log(this.value);
+    }
+
+    showChangeData() {
+        console.log(this.value);
     }
 }
