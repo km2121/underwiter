@@ -2,7 +2,7 @@
     <div fxLayout="row" fxLayoutAlign="space-between center" *ngFor="let username of usernames; let i = index">
         <span class="username-dialog">{{username}}</span>
         <mat-form-field>
-            <mat-select [(ngModel)]="result[i]" placeholder="Select Role">
+            <mat-select [(ngModel)]="model[i]" placeholder="Select Role">
                 <mat-option *ngFor="let role of roles" [value]="role">
                     {{ role.participantTypeName }}
                 </mat-option>
@@ -11,7 +11,7 @@
     </div>
     <div class="info-content" fxLayout="row" fxLayoutAlign="center center">
         <button class="mr-2" mat-raised-button color="primary" (click)="saveData()">Save</button>
-        <button id="save-button" [mat-dialog-close]="result" cdkFocusInitial [hidden]="true"></button>
+        <button id="save-button" [mat-dialog-close]="roles" cdkFocusInitial [hidden]="true"></button>
         <button class="ml-2" mat-raised-button (click)="onNoClick()">Cancel</button>
     </div>
 </div>

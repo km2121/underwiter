@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { DynamicFormService } from '../service/dynamic-form.service';
 
 @Component({
     selector: 'app-change-role-dialog',
@@ -13,20 +14,22 @@ export class ChangeRoleDialog implements OnInit {
 
     roles: Array<any>;
     usernames: string[];
-    result: Array<any>;
+    model: Array<any>;
     constructor(
         private dialogRef: MatDialogRef<ChangeRoleDialog>,
-        @Inject(MAT_DIALOG_DATA) public data: any
+        private service: DynamicFormService
     ) {
     }
 
     ngOnInit() {
         this.usernames = [];
-        this.roles = this.data.slice();
-        this.result = this.data.slice();
-        for (let i = 0; i < this.roles.length; i++) {
-            this.usernames.push(this.roles[i].participantName);
-        }
+        this.service.getParticipantTypeData().subscribe((data: any) => {
+            this.roles = data.slice();
+            this.model = data.slice();
+            for (let i = 0; i < this.roles.length; i++) {
+                this.usernames.push(this.roles[i].participantName);
+            }
+        });
     }
 
     /**
@@ -40,9 +43,11 @@ export class ChangeRoleDialog implements OnInit {
      * Click Save button
      */
     saveData() {
-        for (let i = 0; i < this.result.length; i++) {
-            this.result[i].participantName = this.usernames[i];
+        for (let i = 0; i < this.roles.length; i++) {
+            this.roles[i].participantTypeId = this.model[i].participantTypeId;
+            this.roles[i].participantTypeName = this.model[i].participantTypeName;
         }
+        console.log(this.roles);
         document.getElementById('save-button').click();
     }
 }
