@@ -85,8 +85,8 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    */
   loadUserData() {
     return this.dynamicFormService.getUsers().subscribe((data: User[]) => {
-      this.users = data;
-      this.selectedUser = data[0];
+      this.users = data.slice();
+      this.selectedUser = <User> JSON.parse(JSON.stringify(data[0]));
       this.mapDataToView(this.selectedUser);
     }, (error) => {
       // handle error
@@ -148,9 +148,9 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    */
   changeUser(userId: number) {
     this.saveData();
-    this.selectedUser = this.getUserByUserId(userId);
+    this.selectedUser = <User> JSON.parse(JSON.stringify(this.getUserByUserId(userId)));
     this.mapDataToView(this.selectedUser);
-    this.selectedUserMenu = this.getMenuByUser(this.selectedUser);
+    this.selectedUserMenu = <Menu> JSON.parse(JSON.stringify(this.getMenuByUser(this.selectedUser)));
   }
 
   /**
@@ -224,8 +224,8 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
   getUserName(user: User) {
     const lastNameField = 'Last name';
     const firstNameField = 'First name';
-    let lastName;
-    let firstName;
+    let lastName: string;
+    let firstName: string;
     for (let i = 0; i < user.data.length; i++) {
       for (let j = 0; j < user.data[i].fields.length; j++) {
         if (user.data[i].fields[j].fieldName === lastNameField) {
