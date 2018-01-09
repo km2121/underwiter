@@ -1,9 +1,9 @@
-<div fxLayout="column">
+<div fxLayout="column" *ngIf="model != null && roles != null">
     <div fxLayout="row" fxLayoutAlign="space-between center" *ngFor="let username of usernames; let i = index">
         <span class="username-dialog">{{username}}</span>
         <mat-form-field>
-            <mat-select [(ngModel)]="model[i]" placeholder="Select Role">
-                <mat-option *ngFor="let role of roles" [value]="role">
+            <mat-select [(ngModel)]="model[i].participantTypeId" placeholder="Select Role">
+                <mat-option *ngFor="let role of roles" [value]="role.participantTypeId">
                     {{ role.participantTypeName }}
                 </mat-option>
             </mat-select>

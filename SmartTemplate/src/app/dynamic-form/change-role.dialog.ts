@@ -24,11 +24,13 @@ export class ChangeRoleDialog implements OnInit {
     ngOnInit() {
         this.usernames = [];
         this.service.getParticipantTypeData().subscribe((data: any) => {
-            this.roles = data.slice();
-            this.model = data.slice();
-            for (let i = 0; i < this.roles.length; i++) {
-                this.usernames.push(this.roles[i].participantName);
+            this.model = data;
+            for (let i = 0; i < this.model.length; i++) {
+                this.usernames.push(this.model[i].participantName);
             }
+        });
+        this.service.getRoles().subscribe((data: any) => {
+            this.roles = data;
         });
     }
 
@@ -44,10 +46,13 @@ export class ChangeRoleDialog implements OnInit {
      */
     saveData() {
         for (let i = 0; i < this.roles.length; i++) {
-            this.roles[i].participantTypeId = this.model[i].participantTypeId;
-            this.roles[i].participantTypeName = this.model[i].participantTypeName;
+            for (let j = 0; j < this.model.length; j++) {
+                if (this.model[j].participantTypeId === this.roles[i].participantTypeId) {
+                    this.model[j].participantTypeName = this.roles[i].participantTypeName;
+                }
+            }
         }
-        console.log(this.roles);
+        console.log(this.model);
         document.getElementById('save-button').click();
     }
 }

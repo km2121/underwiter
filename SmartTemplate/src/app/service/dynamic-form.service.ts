@@ -38,6 +38,13 @@ export class DynamicFormService {
     }
 
     /**
+     * Get user roles data
+     */
+    getRoles() {
+        return this.http.get(this.dataUrl + '/roles.json');
+    }
+
+    /**
      * Save user after change to db
      * @param user User want to save
      */
