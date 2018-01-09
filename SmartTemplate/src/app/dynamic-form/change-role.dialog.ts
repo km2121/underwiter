@@ -6,7 +6,7 @@ import { DynamicFormService } from '../service/dynamic-form.service';
     selector: 'app-change-role-dialog',
     templateUrl: './change-role.dialog.html',
     styleUrls: [
-        './dynamic-form.component.scss'
+        './dynamic-form.component.css'
     ]
 })
 
