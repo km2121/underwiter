@@ -16,16 +16,17 @@
 .nav-list {
     margin-top: 30px;
     padding-top: 0px;
-    // position: absolute;
     right: 0;
     min-width: 200px;
     border: 1px solid rgba(0,0,0,.125);;
     border-radius: 5px;
 
-    .nav-item {
-        border-bottom: 1px solid rgba(0,0,0,.125);
-        text-transform: uppercase;
-    }
+    
+}
+
+.nav-item {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    text-transform: uppercase;
 }
 
 .info-container {
@@ -35,10 +36,10 @@
 
 .info-content {
     padding: 20px 30px;
+}
 
-    mat-radio-button {
-        margin-bottom: 10px;
-    }
+mat-radio-button {
+    margin-bottom: 10px;
 }
 
 .info-title {
