@@ -7,3 +7,7 @@ export class ComponentConstant {
     public static CHECK_BOX = 'checkBox';
     public static TEXT_AREA = 'textarea';
 }
+
+export class Global {
+    public static RESOURCE_URL = '/assets/data';
+}

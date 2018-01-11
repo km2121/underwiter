@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User, Menu, FieldMetadata} from '../model';
+import { Global } from '../shared';
 
 @Injectable()
 export class DynamicFormService {
-    private dataUrl = '/assets/data';
     constructor(
         private http: HttpClient
     ) {}
@@ -12,36 +12,36 @@ export class DynamicFormService {
     /**
      * Get user data
      */
-    getUsers() {
-        return this.http.get<User[]>(this.dataUrl + '/populate-form-val.json');
+    getUsers(loanParticpantId?: number) {
+        return this.http.get<User[]>(Global.RESOURCE_URL + '/populate-form-val.json');
     }
 
     /**
      * Get menu data
      */
-    getMenus() {
-        return this.http.get<Menu[]>(this.dataUrl + '/menu.json');
+    getMenus(loanParticpantId?: number) {
+        return this.http.get<Menu[]>(Global.RESOURCE_URL + '/menu.json');
     }
 
     /**
      * Get participant data
      */
     getParticipantTypeData() {
-        return this.http.get(this.dataUrl + '/participantTypeData.json');
+        return this.http.get(Global.RESOURCE_URL + '/participantTypeData.json');
     }
 
     /**
      * Get metadata of fields
      */
-    getMetadata() {
-        return this.http.get<FieldMetadata[]>(this.dataUrl + '/field-metadata.json');
+    getMetadata(loanParticpantId?: number) {
+        return this.http.get<FieldMetadata[]>(Global.RESOURCE_URL + '/field-metadata.json');
     }
 
     /**
      * Get user roles data
      */
     getRoles() {
-        return this.http.get(this.dataUrl + '/roles.json');
+        return this.http.get(Global.RESOURCE_URL + '/roles.json');
     }
 
     /**

@@ -1,9 +1,9 @@
-export interface UserData {
+export class UserData {
     menuId?: string;
     fields?: UserFieldData[];
 }
 
-export interface UserFieldData {
+export class UserFieldData {
     fieldId?: string;
     category?: string;
     fieldName?: string;
@@ -15,31 +15,31 @@ export interface UserFieldData {
     required?: boolean;
 }
 
-export interface User {
+export class User {
     loanParticpantId: number;
     participantTypeId: number;
     data: UserData[];
 }
 
-export interface Menu {
+export class Menu {
     loanParticpantId?: number;
     participantTypeId?: number;
     data: MenuData[];
 }
 
-export interface MenuData {
+export class MenuData {
     menuId?: string;
     menuName?: string;
     show?: boolean;
 }
 
-export interface FieldMetadata {
+export class FieldMetadata {
     fieldId?: number;
     loanParticpantId?: number;
     metadata?: Metadata[];
 }
 
-export interface Metadata {
+export class Metadata {
     key: string;
     value: string;
 }
