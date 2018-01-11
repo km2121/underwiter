@@ -1,33 +1,33 @@
 <mat-form-field *ngIf="isInput" fxFill>
-    <input [(ngModel)]="value" [disabled]="isDisable" required="isRequire" matInput placeholder="{{placeholder}}">
+    <input [(ngModel)]="value" [disabled]="isDisable" [required]="isRequire" matInput placeholder="{{placeholder}}">
 </mat-form-field>
 <mat-form-field *ngIf="isDropdown" fxFill>
-    <mat-select [(ngModel)]="value" [disabled]="isDisable" required="isRequire" placeholder="{{placeholder}}" (change)="showChangeData()">
+    <mat-select [(ngModel)]="value" [disabled]="isDisable" [required]="isRequire" placeholder="{{placeholder}}" (change)="showChangeData()">
         <mat-option *ngFor="let data of metadata" [value]="data.key">
             {{ data.value }}
         </mat-option>
     </mat-select>
 </mat-form-field>
 <mat-form-field *ngIf="isDropdownMultiple" fxFill>
-    <mat-select [(ngModel)]="value" [disabled]="isDisable" required="isRequire" placeholder="{{placeholder}}" (change)="showChangeData()" multiple>
+    <mat-select [(ngModel)]="value" [disabled]="isDisable" [required]="isRequire" placeholder="{{placeholder}}" (change)="showChangeData()" multiple>
         <mat-option *ngFor="let data of metadata" [value]="data.key">
             {{ data.value }}
         </mat-option>
     </mat-select>
 </mat-form-field>
 <mat-form-field *ngIf="isDatepicker" fxFill>
-    <input [(ngModel)]="value" matInput [disabled]="isDisable" required="isRequire" [matDatepicker]="dobPicker" placeholder="{{placeholder}}">
+    <input [(ngModel)]="value" matInput [disabled]="isDisable" [required]="isRequire" [matDatepicker]="dobPicker" placeholder="{{placeholder}}">
     <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
     <mat-datepicker #dobPicker></mat-datepicker>
 </mat-form-field>
-<mat-radio-group [(ngModel)]="value" *ngIf="isRadioGroup" [disabled]="isDisable" required="isRequire" fxLayout="column" (change)="showChangeData()" fxFill>
+<mat-radio-group [(ngModel)]="value" *ngIf="isRadioGroup" [disabled]="isDisable" [required]="isRequire" fxLayout="column" (change)="showChangeData()" fxFill>
     <span class="placeholder-text">{{placeholder}}</span>
     <mat-radio-button *ngFor="let data of metadata" [value]="data.key">
         {{data.value}}
     </mat-radio-button>
 </mat-radio-group>
 <mat-form-field *ngIf="isTextArea" fxFill>
-    <textarea [(ngModel)]="value" [disabled]="isDisable" required="isRequire" matInput placeholder="{{placeholder}}"></textarea>
+    <textarea [(ngModel)]="value" [disabled]="isDisable" [required]="isRequire" matInput placeholder="{{placeholder}}"></textarea>
 </mat-form-field>
 <div *ngIf="isCheckBox" fxLayout="column">
     <span class="placeholder-text">{{placeholder}}</span>
