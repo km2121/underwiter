@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 import {
   MatAutocompleteModule,
@@ -37,6 +38,18 @@ import {
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CurrencyMaskConfig, CURRENCY_MASK_CONFIG  } from 'ng2-currency-mask/src/currency-mask.config';
+
+export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
+  align: 'left',
+  allowNegative: true,
+  allowZero: true,
+  decimal: '.',
+  precision: 0,
+  prefix: '$ ',
+  suffix: '',
+  thousands: ','
+};
 
 @NgModule({
   imports: [],
@@ -76,7 +89,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatTooltipModule,
     FlexLayoutModule,
-    CommonModule
-  ]
+    CommonModule,
+    CurrencyMaskModule
+  ],
+  providers: [
+    { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig }
+]
 })
 export class SharedLibsModule { }

@@ -12,7 +12,7 @@
 						"fieldValue": "Smith",
 						"controlType": "textBox",
 						"maxLength": "50",
-						"enable": true,
+						"enable": false,
 						"show": true,
 						"required": true,
 						"validate": "text"
@@ -48,7 +48,7 @@
 						"enable": true,
 						"show": true,
 						"required": true,
-						"validate": "date"
+						"validate": null
 					},
 					{
 						"fieldId": 5,

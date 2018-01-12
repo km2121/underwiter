@@ -64,6 +64,8 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
   loadParticipantType() {
     return this.dynamicFormService.getParticipantTypeData().subscribe((data) => {
       this.roles = data;
+    }, (error) => {
+      this.handleError(error);
     });
   }
 
@@ -75,7 +77,7 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
       this.fieldMetadata = data;
       this.firstInit = true; // flag to check first time init of component, after this, do not run the code in ngAfterViewChecked
     }, (error) => {
-      return error;
+      this.handleError(error);
     });
   }
 
@@ -89,7 +91,7 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
       this.selectedUser = <User> JSON.parse(JSON.stringify(data[0]));
       this.mapDataToView(this.selectedUser);
     }, (error) => {
-      // handle error
+      this.handleError(error);
     });
   }
 
@@ -101,7 +103,7 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
       this.usersMenuData = data;
       this.selectedUserMenu = this.getMenuByUser(this.selectedUser);
     }, (error) => {
-      return error;
+      this.handleError(error);
     });
   }
 
@@ -388,6 +390,10 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
         }
       }
     });
+  }
+
+  handleError(error) {
+    console.log(error);
   }
 
 }

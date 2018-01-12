@@ -83,33 +83,29 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
     handleValidate() {
         switch (this.validate) {
             case ComponentValidation.TEXT: {
-                this.formControl = new FormControl({ disable: this.isDisable }, [Validators.required]);
-                break;
-            }
-            case ComponentValidation.DATE: {
-                this.formControl = new FormControl({ disable: this.isDisable }, [Validators.required]);
+                this.formControl = new FormControl({value: '', disabled: this.isDisable }, []);
                 break;
             }
             case ComponentValidation.TEL: {
-                this.formControl = new FormControl({ disable: this.isDisable }, [Validators.required]);
+                this.formControl = new FormControl({value: '', disabled: this.isDisable }, [
+                    Validators.pattern(RegexPattern.NUMBER)
+                ]);
                 break;
             }
             case ComponentValidation.EMAIL: {
-                this.formControl = new FormControl({ disable: this.isDisable }, [
+                this.formControl = new FormControl({value: '', disabled: this.isDisable }, [
                     Validators.email
                 ]);
                 break;
             }
             case ComponentValidation.NUMBER: {
-                this.formControl = new FormControl({ disable: this.isDisable }, [
+                this.formControl = new FormControl({value: '', disabled: this.isDisable }, [
                     Validators.pattern(RegexPattern.NUMBER)
                 ]);
                 break;
             }
             case ComponentValidation.CURRENCY: {
-                this.formControl = new FormControl({ disable: this.isDisable }, [
-                    Validators.pattern(RegexPattern.NUMBER)
-                ]);
+                this.formControl = new FormControl({value: '', disabled: this.isDisable }, []);
                 break;
             }
         }

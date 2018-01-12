@@ -1,6 +1,7 @@
 <mat-form-field *ngIf="isInput" fxFill>
     <span *ngIf="validate == 'tel'" matPrefix>+1 &nbsp;</span>
-    <input [(ngModel)]="value" type="{{validate}}" [required]="isRequire" matInput placeholder="{{placeholder}}" [formControl]="formControl">
+    <input *ngIf="validate == 'currency'" [ngModel]="value" currencyMask type="{{validate}}" [required]="isRequire" matInput placeholder="{{placeholder}}" [formControl]="formControl">
+    <input *ngIf="validate != 'currency'" [(ngModel)]="value" type="{{validate}}" [required]="isRequire" matInput placeholder="{{placeholder}}" [formControl]="formControl">
 </mat-form-field>
 <mat-form-field *ngIf="isDropdown" fxFill>
     <mat-select [(ngModel)]="value" [disabled]="isDisable" [required]="isRequire" placeholder="{{placeholder}}" (change)="showChangeData()">
