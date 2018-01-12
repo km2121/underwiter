@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, forwardRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { ComponentConstant } from '../../shared';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl, Validators } from '@angular/forms';
+import { ComponentConstant, ComponentValidation, RegexPattern } from '../../shared';
 
 const noop = () => {
 };
@@ -26,6 +26,7 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
     @Input() isRequire: boolean;
     @Input() placeholder: string;
     @Input() metadata: any;
+    @Input() validate: string;
     isInput: boolean;
     isDropdown: boolean;
     isDropdownMultiple: boolean;
@@ -33,6 +34,7 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
     isRadioGroup: boolean;
     isTextArea: boolean;
     isCheckBox: boolean;
+    formControl: FormControl;
     private onTouchedCallback: () => void = noop;
     private onChangeCallback: (_: any) => void = noop;
     private innerValue: any = null;
@@ -41,6 +43,11 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
 
     ngOnInit() {
         // Check type and select component type to render
+        this.handleValidate();
+        this.handleComponentType();
+    }
+
+    handleComponentType() {
         switch (this.type) {
             case ComponentConstant.INPUT: {
                 this.isInput = true;
@@ -68,6 +75,41 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
             }
             case ComponentConstant.CHECK_BOX: {
                 this.isCheckBox = true;
+                break;
+            }
+        }
+    }
+
+    handleValidate() {
+        switch (this.validate) {
+            case ComponentValidation.TEXT: {
+                this.formControl = new FormControl({ disable: this.isDisable }, [Validators.required]);
+                break;
+            }
+            case ComponentValidation.DATE: {
+                this.formControl = new FormControl({ disable: this.isDisable }, [Validators.required]);
+                break;
+            }
+            case ComponentValidation.TEL: {
+                this.formControl = new FormControl({ disable: this.isDisable }, [Validators.required]);
+                break;
+            }
+            case ComponentValidation.EMAIL: {
+                this.formControl = new FormControl({ disable: this.isDisable }, [
+                    Validators.email
+                ]);
+                break;
+            }
+            case ComponentValidation.NUMBER: {
+                this.formControl = new FormControl({ disable: this.isDisable }, [
+                    Validators.pattern(RegexPattern.NUMBER)
+                ]);
+                break;
+            }
+            case ComponentValidation.CURRENCY: {
+                this.formControl = new FormControl({ disable: this.isDisable }, [
+                    Validators.pattern(RegexPattern.NUMBER)
+                ]);
                 break;
             }
         }

@@ -29,7 +29,7 @@
                             <div class="info-content" fxLayout="column" *ngFor="let field of menu.fields">
                                 <form #appForm="ngForm">
                                     <app-custom-material name="custom-field" [(ngModel)]="field.fieldValue" [type]="field.controlType" [isDisable]="!field.enable" [isRequire]="field.required"
-                                        [placeholder]="field.fieldName" [metadata]="getMetadataForField(field.fieldId)"></app-custom-material>
+                                        [placeholder]="field.fieldName" [metadata]="getMetadataForField(field.fieldId)" [validate]="field.validate"></app-custom-material>
                                 </form>
                             </div>
                         </div>
