@@ -27,6 +27,7 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
     @Input() placeholder: string;
     @Input() metadata: any;
     @Input() validate: string;
+    @Input() maxLength: string;
     isInput: boolean;
     isDropdown: boolean;
     isDropdownMultiple: boolean;
@@ -83,7 +84,9 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
     handleValidate() {
         switch (this.validate) {
             case ComponentValidation.TEXT: {
-                this.formControl = new FormControl({value: '', disabled: this.isDisable }, []);
+                this.formControl = new FormControl({value: '', disabled: this.isDisable }, [
+                    Validators.minLength(3)
+                ]);
                 break;
             }
             case ComponentValidation.TEL: {
