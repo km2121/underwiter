@@ -1,8 +1,8 @@
 <mat-form-field *ngIf="isInput" fxFill>
     <span *ngIf="validate == 'tel'" matPrefix>+1 &nbsp;</span>
-    <input *ngIf="validate == 'currency'" [(ngModel)]="value" currencyMask type="{{validate}}" [required]="isRequire" matInput
+    <input *ngIf="validate == 'currency'" [(ngModel)]="value" currencyMask [required]="isRequire" matInput
         placeholder="{{placeholder}}" [formControl]="formControl" maxlength="{{maxLength}}">
-    <input *ngIf="validate != 'currency'" [(ngModel)]="value" type="{{validate}}" [required]="isRequire" matInput placeholder="{{placeholder}}"
+    <input *ngIf="validate != 'currency'" [(ngModel)]="value" [required]="isRequire" matInput placeholder="{{placeholder}}"
         [formControl]="formControl" maxlength="{{maxLength}}">
     <mat-error *ngIf="validate == 'email' && formControl.hasError('email')">
         Please enter a valid email address
