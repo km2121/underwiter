@@ -88,7 +88,7 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
   loadUserData() {
     return this.dynamicFormService.getUsers().subscribe((data: User[]) => {
       this.users = data.slice();
-      this.selectedUser = <User> JSON.parse(JSON.stringify(data[0]));
+      this.selectedUser = <User>JSON.parse(JSON.stringify(data[0]));
       this.mapDataToView(this.selectedUser);
     }, (error) => {
       this.handleError(error);
@@ -150,9 +150,9 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    */
   changeUser(userId: number) {
     this.saveData();
-    this.selectedUser = <User> JSON.parse(JSON.stringify(this.getUserByUserId(userId)));
+    this.selectedUser = <User>JSON.parse(JSON.stringify(this.getUserByUserId(userId)));
     this.mapDataToView(this.selectedUser);
-    this.selectedUserMenu = <Menu> JSON.parse(JSON.stringify(this.getMenuByUser(this.selectedUser)));
+    this.selectedUserMenu = <Menu>JSON.parse(JSON.stringify(this.getMenuByUser(this.selectedUser)));
   }
 
   /**
@@ -264,6 +264,9 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    * @param user user want to calculate complete percent
    */
   calcCompletedRequiredPercent(user: User) {
+    if (user.loanParticpantId === this.selectedUser.loanParticpantId) {
+      user = this.selectedUser;
+    }
     let requiredFields = 0;
     let completedRequiredFields = 0;
     for (let i = 0; i < user.data.length; i++) {
