@@ -357,33 +357,8 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    * Save user when select another user or click Save button
    */
   saveData() {
-    if (this.calcCompletedRequiredPercent(this.selectedUser) !== '100%') {
-      const dialogRef = this.dialog.open(SaveConfirmDialog, {
-        width: '400px',
-        disableClose: true
-      });
-      dialogRef.afterClosed().subscribe((data) => {
-        if (data) {
-
-        }
-      });
-    }
     this.mapDataToSave(this.selectedUser);
     return this.dynamicFormService.saveUserData(this.selectedUser);
-  }
-
-  getFirstElementUncompleted() {
-    // let
-    for (let i = 0; i < this.selectedUser.data.length; i++) {
-      for (let j = 0; j < this.selectedUser.data[i].fields.length; j++) {
-        if (this.selectedUser.data[i].fields[j].controlType !== DATEPICKER && this.selectedUser.data[i].fields[j].fieldValue.length > 0) {
-
-        } else if (this.selectedUser.data[i].fields[j].controlType === DATEPICKER &&
-            new Date(this.selectedUser.data[i].fields[j].fieldValue).getTime()) {
-
-        }
-      }
-    }
   }
 
   /**
@@ -406,25 +381,19 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    * This function open dialog and handle data after dialog close
    */
   openDialogChangeRole() {
-    // const a = document.getElementsByClassName('mat-input-element');
-    const a = document.getElementsByClassName('info-content');
-    const b = <HTMLElement> a[20];
-    console.log(b.children);
-    console.log(b.children[0][0]);
-    b.children[0][0].focus();
-    // const dialogRef = this.dialog.open(ChangeRoleDialog, {
-    //   width: '500px',
-    //   data: this.roles
-    // });
+    const dialogRef = this.dialog.open(ChangeRoleDialog, {
+      width: '500px',
+      data: this.roles
+    });
 
-    // dialogRef.afterClosed().subscribe((data) => {
-    //   if (data && data.length > 0) {
-    //     this.roles = data;
-    //     for (let i = 0; i < this.users.length; i++) {
-    //       this.users[i].participantTypeId = this.roles[i].participantTypeId;
-    //     }
-    //   }
-    // });
+    dialogRef.afterClosed().subscribe((data) => {
+      if (data && data.length > 0) {
+        this.roles = data;
+        for (let i = 0; i < this.users.length; i++) {
+          this.users[i].participantTypeId = this.roles[i].participantTypeId;
+        }
+      }
+    });
   }
 
   handleError(error) {
