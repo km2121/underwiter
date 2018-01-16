@@ -29,7 +29,7 @@
                             <div class="info-content" fxLayout="column" *ngFor="let field of menu.fields">
                                 <form #appForm="ngForm">
                                     <app-custom-material name="custom-field" [(ngModel)]="field.fieldValue" [type]="field.controlType" [isDisable]="!field.enable" [isRequire]="field.required"
-                                        [placeholder]="field.fieldName" [metadata]="getMetadataForField(field.fieldId)" [validate]="field.validate" [maxLength]="field.maxLength"></app-custom-material>
+                                        [placeholder]="field.fieldName" [metadata]="getMetadataForField(field.fieldId)" [validate]="field.validate || null" [maxLength]="field.maxLength"></app-custom-material>
                                 </form>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
     </div>
     <div fxFlex="28" fxLayout="column" fxLayoutAlign="start start" [appScrollSpy]="60" [className]="'right-content-spy'" *ngIf="roles">
         <div fxLayout="column">
-            <div class="user-content mb-3" *ngFor="let user of users" (click)="changeUser(user.loanParticpantId)" [ngClass]="{'user-content-active': user.loanParticpantId === selectedUser.loanParticpantId}">
+            <div class="user-content mb-3" *ngFor="let user of users" (click)="saveData(user.loanParticpantId)" [ngClass]="{'user-content-active': user.loanParticpantId === selectedUser.loanParticpantId}">
                 <div class="progress mb-2">
                     <div class="progress-bar progress-bar-success" role="progressbar" [ngStyle]="{'width': calcCompletedRequiredPercent(user)}">
                         {{calcCompletedRequiredPercent(user)}} Complete

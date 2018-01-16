@@ -151,7 +151,6 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
    * This function save data of old user and change old selected user to new selected user
    */
   changeUser(userId: number) {
-    this.saveData();
     this.selectedUser = <User>JSON.parse(JSON.stringify(this.getUserByUserId(userId)));
     this.mapDataToView(this.selectedUser);
     this.selectedUserMenu = <Menu>JSON.parse(JSON.stringify(this.getMenuByUser(this.selectedUser)));
@@ -357,20 +356,32 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
   /**
    * Save user when select another user or click Save button
    */
-  saveData() {
+  saveData(loanParticpantId?: number) {
     if (this.calcCompletedRequiredPercent(this.selectedUser) !== '100%') {
       const dialogRef = this.dialog.open(SaveConfirmDialog, {
         width: '400px',
         disableClose: true
       });
       dialogRef.afterClosed().subscribe((data) => {
-        if (data) {
+        if (data === true) {
+          this.mapDataToSave(this.selectedUser);
+          const savedUser = this.dynamicFormService.saveUserData(this.selectedUser);
+          if (loanParticpantId) {
+            this.changeUser(loanParticpantId);
+          }
+          // return savedUser;
+        } else {
           this.focusFirstElementUncompleted();
+          return null;
         }
       });
     } else {
       this.mapDataToSave(this.selectedUser);
-      return this.dynamicFormService.saveUserData(this.selectedUser);
+      const savedUser = this.dynamicFormService.saveUserData(this.selectedUser);
+      if (user) {
+        this.changeUser(user.loanParticpantId);
+      }
+      return savedUser;
     }
   }
 
@@ -380,11 +391,12 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
     for (let i = 0; i < this.selectedUser.data.length; i++) {
       for (let j = 0; j < this.selectedUser.data[i].fields.length; j++) {
         index++;
-        if ((this.selectedUser.data[i].fields[j].controlType !== DATEPICKER) && (this.selectedUser.data[i].fields[j].fieldValue.length === 0)) {
+        if ((this.selectedUser.data[i].fields[j].controlType !== DATEPICKER) &&
+          (this.selectedUser.data[i].fields[j].fieldValue.length === 0)) {
           break;
         } else if ((this.selectedUser.data[i].fields[j].controlType === DATEPICKER) &&
-            !(new Date(this.selectedUser.data[i].fields[j].fieldValue).getTime())) {
-              break;
+          !(new Date(this.selectedUser.data[i].fields[j].fieldValue).getTime())) {
+          break;
         }
       }
       break;

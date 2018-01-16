@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl, Validators } from '@angular/forms';
 import { ComponentConstant, ComponentValidation, RegexPattern } from '../../shared';
+import { FormArray } from '@angular/forms/src/model';
 
 const noop = () => {
 };
@@ -110,6 +111,9 @@ export class CustomMaterialComponent implements OnInit, ControlValueAccessor {
             case ComponentValidation.CURRENCY: {
                 this.formControl = new FormControl({value: '', disabled: this.isDisable }, []);
                 break;
+            }
+            default: {
+                this.formControl = new FormControl();
             }
         }
     }
