@@ -21,6 +21,7 @@ import { ScrollSpyDirective } from './layout/directives';
 
 import { APP_ROUTE } from './app-routing.module';
 import { ChangeRoleDialog } from './dynamic-form/change-role.dialog';
+import { SaveConfirmDialog } from './dynamic-form/save-confirm.dialog';
 
 
 @NgModule({
@@ -40,10 +41,12 @@ import { ChangeRoleDialog } from './dynamic-form/change-role.dialog';
     AdminComponent,
     ScrollSpyDirective,
     CustomMaterialComponent,
-    ChangeRoleDialog
+    ChangeRoleDialog,
+    SaveConfirmDialog
   ],
   entryComponents: [
-    ChangeRoleDialog
+    ChangeRoleDialog,
+    SaveConfirmDialog
   ],
   providers: [
     DynamicFormService
