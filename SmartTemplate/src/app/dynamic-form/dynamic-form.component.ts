@@ -378,8 +378,8 @@ export class DynamicFormComponent implements OnInit, AfterViewChecked {
     } else {
       this.mapDataToSave(this.selectedUser);
       const savedUser = this.dynamicFormService.saveUserData(this.selectedUser);
-      if (user) {
-        this.changeUser(user.loanParticpantId);
+      if (loanParticpantId) {
+        this.changeUser(loanParticpantId);
       }
       return savedUser;
     }
