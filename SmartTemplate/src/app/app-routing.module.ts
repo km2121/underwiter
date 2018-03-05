@@ -2,6 +2,7 @@ import { Route } from '@angular/router';
 
 import { AdminComponent } from './admin/admin.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { SummaryComponent } from './summary/summary.component';
 
 export const APP_ROUTE: Route[] = [
     {
@@ -18,6 +19,14 @@ export const APP_ROUTE: Route[] = [
         data: {
             authorities: [],
             pageTitle: 'admin.title'
+        }
+    },
+    {
+        path: 'summary',
+        component: SummaryComponent,
+        data: {
+            authorities: [],
+            pageTitle: 'home.title'
         }
     }
 ];
